@@ -61,6 +61,12 @@ flutter:
   assets:
     - assets/images/
     - assets/videos/
+
+  fonts:
+    - family: nasalization
+      fonts:
+        - asset: assets/fonts/nasalization-rg.otf
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
   # For details regarding adding assets from package dependencies, see
