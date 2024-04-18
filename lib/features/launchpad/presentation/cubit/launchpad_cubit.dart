@@ -1,8 +1,30 @@
-// import 'package:bloc/bloc.dart';
-// import 'package:equatable/equatable.dart';
+import 'package:bloc/bloc.dart';
 
-// part 'launchpad_state.dart';
+import '../../data/repositories/launchpad_repo.dart';
+import 'launchpad_state.dart';
 
-// class LaunchpadCubit extends Cubit<LaunchpadState> {
-//   LaunchpadCubit() : super(LaunchpadInitial());
-// }
+
+
+class LaunchpadCubit extends Cubit<LaunchpadState> {
+  final LaunchpadRepo _launchpadRepo;
+  LaunchpadCubit(this._launchpadRepo) : super(LaunchpadInitial());
+
+
+void getLaunchpads() async {
+    emit(const LaunchpadLoading());
+    final result = await _launchpadRepo.getLaunchpads();
+    result.when(
+      success: (data) {
+        emit(LaunchpadLoaded(data));
+      },
+      failure: (error) {
+        emit(LaunchpadError(error.apiErrorModel.message ?? ''));
+      },
+    );
+  }
+
+
+
+
+
+}
