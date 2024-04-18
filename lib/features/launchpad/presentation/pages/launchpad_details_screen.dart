@@ -3,8 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mentorship/core/helpers/extensions.dart';
 import 'package:mentorship/core/theming/text_styles.dart';
 
+import '../../../../core/sharedWidgets/default_appbar.dart';
 import '../../data/models/launchpad_model.dart';
-import '../widgets/custom_table_row.dart';
+import '../widgets/bottom_positioned_shadow.dart';
+import '../widgets/launchpad_details_table.dart';
 
 class LaunchpadDetailsScreen extends StatelessWidget {
   final LaunchpadModel launchpad;
@@ -14,6 +16,7 @@ class LaunchpadDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const DefaultAppBar(),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.h, vertical: 8.w),
         child: SingleChildScrollView(
@@ -31,6 +34,7 @@ class LaunchpadDetailsScreen extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   ),
+                  const BottomPositionedShadow(),
                   Positioned(
                     bottom: 10,
                     left: 10,
@@ -47,24 +51,7 @@ class LaunchpadDetailsScreen extends StatelessWidget {
                 style: TextStyles.bodyMedium,
               ),
               16.ph,
-              Table(
-                defaultVerticalAlignment: TableCellVerticalAlignment.baseline,
-                textBaseline: TextBaseline.alphabetic,
-                children: [
-                  CustomTableRow(
-                    title: 'Region',
-                    value: launchpad.region,
-                  ),
-                  CustomTableRow(
-                    title: 'Status',
-                    value: launchpad.status,
-                  ),
-                  CustomTableRow(
-                    title: 'Full name',
-                    value: launchpad.fullName,
-                  ),
-                ],
-              )
+              LaunchpadDetailsTable(launchpad: launchpad)
             ],
           ),
         ),

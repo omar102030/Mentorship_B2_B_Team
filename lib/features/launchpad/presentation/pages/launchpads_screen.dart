@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mentorship/features/launchpad/presentation/cubit/launchpad_state.dart';
 
+import '../../../../core/sharedWidgets/default_appbar.dart';
 import '../cubit/launchpad_cubit.dart';
 import '../widgets/launchpad_card.dart';
 
@@ -25,6 +26,7 @@ class _LaunchpadsScreenState extends State<LaunchpadsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const DefaultAppBar(),
       body: BlocBuilder<LaunchpadCubit, LaunchpadState>(
         builder: (context, state) {
           if (state is LaunchpadLoading) {
