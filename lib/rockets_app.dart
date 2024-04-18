@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mentorship/core/routing/app_router.dart';
 import 'package:mentorship/core/routing/routes.dart';
+import 'package:mentorship/core/theming/app_theme.dart';
 
 class RocketsApp extends StatelessWidget {
   final AppRouter appRouter;
@@ -13,6 +14,7 @@ class RocketsApp extends StatelessWidget {
       designSize: const Size(375, 812),
       minTextAdapt: true,
       child: MaterialApp(
+        theme: lightTheme(),
         debugShowCheckedModeBanner: false,
         initialRoute: Routes.splashScreen,
         onGenerateRoute: appRouter.generateRoute,
