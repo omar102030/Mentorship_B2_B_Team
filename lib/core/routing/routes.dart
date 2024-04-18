@@ -3,4 +3,5 @@ class Routes {
   static const String splashScreen = '/splashScreen';
   static const String onBoardingScreen = '/onBoardingScreen';
   static const String launchpadScreen = '/launchpadScreen';
+  static const String launchpadDetailScreen = '/launchpadDetailScreen';
 }

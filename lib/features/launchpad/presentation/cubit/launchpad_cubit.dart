@@ -1,11 +1,12 @@
 import 'package:bloc/bloc.dart';
 
+import '../../data/models/launchpad_model.dart';
 import '../../data/repositories/launchpad_repo.dart';
 import 'launchpad_state.dart';
 
 
 
-class LaunchpadCubit extends Cubit<LaunchpadState> {
+class LaunchpadCubit extends Cubit<LaunchpadState<List<LaunchpadModel>>> {
   final LaunchpadRepo _launchpadRepo;
   LaunchpadCubit(this._launchpadRepo) : super(LaunchpadInitial());
 

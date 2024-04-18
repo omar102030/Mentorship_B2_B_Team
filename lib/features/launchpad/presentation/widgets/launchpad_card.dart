@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mentorship/core/helpers/extensions.dart';
 import 'package:mentorship/core/theming/colors_manager.dart';
 import 'package:mentorship/core/theming/text_styles.dart';
 import 'package:mentorship/features/launchpad/data/models/launchpad_model.dart';
 
+import '../../../../core/routing/routes.dart';
+
 class LaunchpadCard extends StatelessWidget {
   LaunchpadModel launchpad;
-   LaunchpadCard({
+  LaunchpadCard({
     super.key,
     required this.launchpad,
   });
@@ -42,7 +45,8 @@ class LaunchpadCard extends StatelessWidget {
                       style: TextStyles.bodyMedium,
                     ),
                     onPressed: () {
-                      //TODO: navigate to details screen
+                      context.pushNamed(Routes.launchpadDetailScreen,
+                          arguments: launchpad);
                     }),
               ))
         ],

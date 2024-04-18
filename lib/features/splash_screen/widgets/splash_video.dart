@@ -20,7 +20,8 @@ class _SplashVideoState extends State<SplashVideo> {
   void initState() {
     super.initState();
     _timer = Timer.periodic(const Duration(seconds: 6), (timer) {
-      context.pushNamedAndRemoveUntil(Routes.onBoardingScreen,
+      // context.pushNamedAndRemoveUntil(Routes.onBoardingScreen,
+      context.pushNamedAndRemoveUntil(Routes.launchpadScreen,
           predicate: (route) => false);
     });
     _controller = VideoPlayerController.asset('assets/videos/splash_video.mp4')

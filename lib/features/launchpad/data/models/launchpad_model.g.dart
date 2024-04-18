@@ -17,6 +17,9 @@ LaunchpadModel _$LaunchpadModelFromJson(Map<String, dynamic> json) =>
       status: json['status'] as String,
       region: json['region'] as String,
       details: json['details'] as String,
+      latitude: (json['latitude'] as num).toDouble(),
+      longitude: (json['longitude'] as num).toDouble(),
+      fullName: json['full_name'] as String,
     );
 
 Map<String, dynamic> _$LaunchpadModelToJson(LaunchpadModel instance) =>
@@ -26,5 +29,8 @@ Map<String, dynamic> _$LaunchpadModelToJson(LaunchpadModel instance) =>
       'status': instance.status,
       'region': instance.region,
       'details': instance.details,
+      'latitude': instance.latitude,
+      'longitude': instance.longitude,
+      'full_name': instance.fullName,
       'images': instance.imagesUrlMap,
     };
