@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mentorship/core/theming/colors_manager.dart';
+import 'package:mentorship/core/theming/text_styles.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -6,8 +8,10 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ColorsManager.scaffoldColor,
       appBar: AppBar(
-        title: const Text('Home Screen'),
+        backgroundColor: ColorsManager.scaffoldColor,
+        title:  Text('Home Screen', style: TextStyles.titleLarge,),
       ),
     );
   }
