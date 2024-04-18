@@ -2,6 +2,7 @@ class ApiConstants {
   static const String baseUrl = 'https://api.spacexdata.com/v4/';
   static const String getRockets = 'rockets/';
   static  String getOneRocket(id) => '$getRockets$id';
+  static const String getLaunchpads = 'launchpads/';
 }
 
 class ApiErrors {
