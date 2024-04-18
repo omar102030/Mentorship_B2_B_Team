@@ -15,9 +15,9 @@ class SplashLogo extends StatelessWidget {
         children: [
           Image.asset('assets/images/app_logo.png'),
           6.ph,
-          const SizedBox(
-            height: 50,
-            child: SpinKitThreeBounce(
+          SizedBox(
+            height: 50.h,
+            child: const SpinKitThreeBounce(
               color: Colors.white,
               size: 25.0,
             ),
