@@ -5,6 +5,7 @@ import 'package:mentorship/core/routing/routes.dart';
 import 'package:mentorship/features/launchpad/presentation/pages/launchpad_details_screen.dart';
 import 'package:mentorship/features/launchpad/presentation/pages/launchpads_screen.dart';
 import 'package:mentorship/features/on_booarding/on_boarding_screen.dart';
+import 'package:mentorship/features/rockets/ui/rocketsScreen.dart';
 import 'package:mentorship/features/splash_screen/splash_screen.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -37,6 +38,9 @@ class AppRouter {
             launchpad: arguments as LaunchpadModel,
           ),
         );
+      case Routes.rocketsScreen:
+        return MaterialPageRoute(builder: (_) => const RocketsScreen());
+
     }
     return null;
   }
