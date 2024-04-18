@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mentorship/core/routing/routes.dart';
+import 'package:mentorship/features/rockets/ui/rocketsScreen.dart';
 import 'package:mentorship/features/splash_screen/splash_screen.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -14,6 +15,8 @@ class AppRouter {
       case Routes.homeScreen:
         return PageTransition(
             child: const HomeScreen(), type: PageTransitionType.rightToLeft);
+      case Routes.rocketsScreen:
+        return MaterialPageRoute(builder: (_) => const RocketsScreen());
     }
     return null;
   }
