@@ -16,6 +16,7 @@ class LaunchpadCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      key: ValueKey(launchpad.id),
       margin: EdgeInsets.all(10.w),
       child: Stack(
         children: [
