@@ -25,9 +25,7 @@ class _LaunchpadsScreenState extends State<LaunchpadsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const DefaultAppBar(),
-      body: BlocBuilder<LaunchpadCubit, LaunchpadState>(
+    return BlocBuilder<LaunchpadCubit, LaunchpadState>(
         builder: (context, state) {
           if (state is LaunchpadLoading) {
             return const Center(child: CircularProgressIndicator());
@@ -45,7 +43,6 @@ class _LaunchpadsScreenState extends State<LaunchpadsScreen> {
           }
           return Container();
         },
-      ),
-    );
+      );
   }
 }
