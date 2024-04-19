@@ -15,14 +15,14 @@ class RocketsListItem extends StatelessWidget {
         alignment: Alignment.bottomCenter,
         children: [
           ClipRRect(
-              borderRadius: BorderRadius.circular(5),
+              borderRadius: BorderRadius.circular(5.r),
               child:  Image.network("https://imgur.com/DaCfMsj.jpg", width: double.infinity,fit: BoxFit.cover,)),
           Container(
             height: 70.h,
             decoration: BoxDecoration(
               boxShadow: [BoxShadow(
                 color: ColorsManager.scaffoldColor.withOpacity(0.47),
-                blurRadius: 8,
+                blurRadius: 8.r,
               )],
             ),
             child: Padding(
@@ -36,7 +36,7 @@ class RocketsListItem extends StatelessWidget {
                     height: 30.h,
                     decoration: BoxDecoration(
                         color: ColorsManager.darkNavyBlueColor,
-                      borderRadius: BorderRadius.circular(15)
+                      borderRadius: BorderRadius.circular(15.r)
                     ),
                     child: MaterialButton(
                       child: Text(
