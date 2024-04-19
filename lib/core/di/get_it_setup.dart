@@ -6,14 +6,11 @@ import 'package:mentorship/features/launchpad/data/repositories/launchpad_repo.d
 
 final serviceLocator = GetIt.instance;
 
-void setupLocator() {
+void setupGetIt() {
 // serviceLocator.registerSingleton<example>(() => example());
   Dio dio = DioFactory.getDio();
   serviceLocator.registerLazySingleton<ApiService>(() => ApiService(dio));
 
-  serviceLocator.registerLazySingleton<LaunchpadRepo>(() => LaunchpadRepo(serviceLocator<ApiService>()));
-
-
-
-
+  serviceLocator.registerLazySingleton<LaunchpadRepo>(
+      () => LaunchpadRepo(serviceLocator<ApiService>()));
 }
