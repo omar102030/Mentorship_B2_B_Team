@@ -25,8 +25,8 @@ class LaunchpadCard extends StatelessWidget {
           ),
           const BottomPositionedShadow(),
           Positioned(
-            bottom: 10,
-            left: 10,
+            bottom: 10.h,
+            left: 10.w,
             child: Text(
               launchpad.name,
               style: TextStyles.titleLarge,
