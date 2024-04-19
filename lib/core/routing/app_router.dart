@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:mentorship/core/routing/routes.dart';
+import 'package:mentorship/features/home/ui/home_screen.dart';
 import 'package:mentorship/features/on_booarding/on_boarding_screen.dart';
 import 'package:mentorship/features/rockets/ui/rocketsScreen.dart';
 import 'package:mentorship/features/splash_screen/splash_screen.dart';
+import 'package:mentorship/features/topics_screen/enums/topics_enum.dart';
+import 'package:mentorship/features/topics_screen/topics_screen.dart';
 import 'package:page_transition/page_transition.dart';
-
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
@@ -16,9 +18,17 @@ class AppRouter {
         return PageTransition(
             child: const OnBoardingScreen(),
             type: PageTransitionType.rightToLeft);
+      case Routes.topicsScreen:
+        return PageTransition(
+            child: const TopicsScreen(), type: PageTransitionType.bottomToTop);
+      case Routes.homeScreen:
+        return PageTransition(
+            child: HomeScreen(
+              topics: arguments as List<TopicsEnum>,
+            ),
+            type: PageTransitionType.fade);
       case Routes.rocketsScreen:
         return MaterialPageRoute(builder: (_) => const RocketsScreen());
-
     }
     return null;
   }

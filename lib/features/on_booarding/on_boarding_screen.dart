@@ -36,7 +36,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
         controller: _controller,
         itemCount: screensContent.length,
         onPageChanged: (index) {
-          print('on changed Index is $index');
           setState(() {
             currentIndex = index;
           });
