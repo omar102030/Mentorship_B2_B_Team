@@ -14,6 +14,7 @@ class CustomTabBar extends StatelessWidget {
 
 
     return TabBar(
+
       labelColor: Colors.black,
       indicatorColor: Colors.transparent,
       unselectedLabelColor: Colors.black,
