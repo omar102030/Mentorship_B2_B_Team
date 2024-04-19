@@ -32,14 +32,10 @@ class _HomeScreenState extends State<HomeScreen>
     super.initState();
     currentPage = 0;
     tabController = TabController(length: 4, vsync: this);
-    tabController.animation!.addListener(
-      () {
-        final value = tabController.animation!.value.round();
-        if (value != currentPage && mounted) {
-          changePage(value);
-        }
-      },
-    );
+    tabController.addListener(() {
+      changePage(tabController.index);
+    });
+   
     _launchpadCubit = LaunchpadCubit(
       serviceLocator<LaunchpadRepo>(),
     );
