@@ -2,7 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_floating_bottom_bar/flutter_floating_bottom_bar.dart';
-import 'package:mentorship/core/helpers/get_it_setup.dart';
+import 'package:mentorship/core/di/get_it_setup.dart';
 import 'package:mentorship/core/theming/colors_manager.dart';
 import 'package:mentorship/features/topics_screen/enums/topics_enum.dart';
 
@@ -35,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen>
     tabController.addListener(() {
       changePage(tabController.index);
     });
-   
+
     _launchpadCubit = LaunchpadCubit(
       serviceLocator<LaunchpadRepo>(),
     );
