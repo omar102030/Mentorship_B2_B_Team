@@ -20,7 +20,7 @@ extension Navigation on BuildContext {
   void pop() => Navigator.of(this).pop();
 }
 
-extension EmptyPadding on num {
+extension EmptySpacing on num {
   SizedBox get ph => SizedBox(
         height: toDouble().h,
       );

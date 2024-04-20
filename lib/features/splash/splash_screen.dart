@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mentorship/features/splash_screen/widgets/splash_logo.dart';
-import 'package:mentorship/features/splash_screen/widgets/splash_video.dart';
+import 'package:mentorship/features/splash/widgets/splash_logo.dart';
+import 'package:mentorship/features/splash/widgets/splash_video.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
