@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 enum TopicsEnum {
   missions,
   ships,
@@ -29,6 +31,29 @@ enum TopicsEnum {
         return 'Crew';
       case TopicsEnum.payloads:
         return 'Payloads';
+    }
+  }
+
+  Widget get getTopicDesignWidget {
+    switch (this) {
+      case TopicsEnum.missions:
+        return const SizedBox();
+      case TopicsEnum.ships:
+        return const SizedBox();
+      case TopicsEnum.capsules:
+        return const SizedBox();
+      case TopicsEnum.starLinks:
+        return const SizedBox();
+      case TopicsEnum.launchPads:
+        return const SizedBox();
+      case TopicsEnum.cores:
+        return const SizedBox();
+      case TopicsEnum.dragons:
+        return const SizedBox();
+      case TopicsEnum.crew:
+        return const SizedBox();
+      case TopicsEnum.payloads:
+        return const SizedBox();
     }
   }
 }
