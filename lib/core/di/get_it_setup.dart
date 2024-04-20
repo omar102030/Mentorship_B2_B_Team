@@ -4,13 +4,13 @@ import 'package:mentorship/core/networking/api_service.dart';
 import 'package:mentorship/core/networking/dio_factory.dart';
 import 'package:mentorship/features/launchpad/data/repositories/launchpad_repo.dart';
 
-final serviceLocator = GetIt.instance;
+final getIt = GetIt.instance;
 
 void setupGetIt() {
 // serviceLocator.registerSingleton<example>(() => example());
   Dio dio = DioFactory.getDio();
-  serviceLocator.registerLazySingleton<ApiService>(() => ApiService(dio));
+  getIt.registerLazySingleton<ApiService>(() => ApiService(dio));
 
-  serviceLocator.registerLazySingleton<LaunchpadRepo>(
-      () => LaunchpadRepo(serviceLocator<ApiService>()));
+  getIt.registerLazySingleton<LaunchpadRepo>(
+      () => LaunchpadRepo(getIt<ApiService>()));
 }

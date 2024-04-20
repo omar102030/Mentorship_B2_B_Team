@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:mentorship/core/assets/app_assets.dart';
 import 'package:mentorship/core/helpers/extensions.dart';
 
 class SplashLogo extends StatelessWidget {
@@ -13,7 +14,7 @@ class SplashLogo extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          Image.asset('assets/images/app_logo.png'),
+          Image.asset(AppImages.logo),
           6.ph,
           SizedBox(
             height: 50.h,

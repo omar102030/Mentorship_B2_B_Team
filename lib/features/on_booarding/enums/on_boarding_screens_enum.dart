@@ -1,21 +1,23 @@
+import 'package:mentorship/core/assets/app_assets.dart';
+
 enum OnBoardingScreensEnum {
   first(
       title: 'Welcome to SpaceX',
       text:
           'Discover the world\'s leading private aerospace manufacturer and space transport services company.',
-      image: 'first_onboarding_image',
+      image: AppImages.firstOnboardingImage,
       i: 0),
   seconed(
       title: 'Revolutionizing Space Travel',
       text:
           'Explore SpaceX\'s groundbreaking advancements in rocket technology.',
-      image: 'seconed_onboarding_image',
+      image: AppImages.secondOnboardingImage,
       i: 1),
   third(
       title: 'Journey to Mars',
       text:
           'Join SpaceX\'s mission to colonize Mars and become a multiplanetary species.',
-      image: 'third_onboarding_image',
+      image: AppImages.thirdOnboardingImage,
       i: 2),
   ;
 
