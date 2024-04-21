@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_floating_bottom_bar/flutter_floating_bottom_bar.dart';
 import 'package:mentorship/core/di/get_it_setup.dart';
 import 'package:mentorship/core/theming/colors_manager.dart';
+import 'package:mentorship/features/topics_gallery/topics_gallery_screen.dart';
 import 'package:mentorship/features/topics_screen/enums/topics_enum.dart';
 
 import '../../../core/sharedWidgets/default_appbar.dart';
@@ -68,9 +69,7 @@ class _HomeScreenState extends State<HomeScreen>
             physics: const BouncingScrollPhysics(),
             children: [
               //? Topics Screen
-              Container(
-                color: Colors.grey,
-              ),
+              TopicsGalleryScreen(topics: widget.topics),
               //? Launchpads Screen
               BlocProvider.value(
                 value: _launchpadCubit,

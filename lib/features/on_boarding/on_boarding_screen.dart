@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mentorship/features/on_booarding/enums/on_boarding_screens_enum.dart';
-import 'package:mentorship/features/on_booarding/widgets/on_boarding_screen_widget.dart';
+import 'package:mentorship/features/on_boarding/enums/on_boarding_screens_enum.dart';
+import 'package:mentorship/features/on_boarding/widgets/on_boarding_screen_widget.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({super.key});

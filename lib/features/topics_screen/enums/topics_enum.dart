@@ -1,5 +1,8 @@
+import 'package:flutter/material.dart';
+
+import '../../dragons/ui/widgets/dragon_list_preview.dart';
+
 enum TopicsEnum {
-  missions,
   ships,
   capsules,
   starLinks,
@@ -11,8 +14,6 @@ enum TopicsEnum {
 
   String get humanReadableName {
     switch (this) {
-      case TopicsEnum.missions:
-        return 'Missions';
       case TopicsEnum.ships:
         return 'Ships';
       case TopicsEnum.capsules:
@@ -29,6 +30,27 @@ enum TopicsEnum {
         return 'Crew';
       case TopicsEnum.payloads:
         return 'Payloads';
+    }
+  }
+
+  Widget get getTopicDesignWidget {
+    switch (this) {
+      case TopicsEnum.ships:
+        return const SizedBox();
+      case TopicsEnum.capsules:
+        return const SizedBox();
+      case TopicsEnum.starLinks:
+        return const SizedBox();
+      case TopicsEnum.launchPads:
+        return const SizedBox();
+      case TopicsEnum.cores:
+        return const SizedBox();
+      case TopicsEnum.dragons:
+        return const DragonsListPreviewWidget();
+      case TopicsEnum.crew:
+        return const SizedBox();
+      case TopicsEnum.payloads:
+        return const SizedBox();
     }
   }
 }

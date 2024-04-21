@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mentorship/core/helpers/extensions.dart';
 import 'package:mentorship/core/routing/routes.dart';
-import 'package:mentorship/core/sharedWidgets/default_button.dart';
+import 'package:mentorship/core/sharedWidgets/custom_button.dart';
 import 'package:mentorship/core/theming/text_styles.dart';
 import 'package:mentorship/features/topics_screen/enums/topics_enum.dart';
 import 'package:mentorship/features/topics_screen/widget/topic_widget.dart';
@@ -17,7 +17,6 @@ class TopicsScreen extends StatefulWidget {
 
 class _TopicsScreenState extends State<TopicsScreen> {
   List<TopicsEnum> topics = [
-    TopicsEnum.missions,
     TopicsEnum.ships,
     TopicsEnum.capsules,
     TopicsEnum.starLinks,
@@ -77,7 +76,7 @@ class _TopicsScreenState extends State<TopicsScreen> {
             const Spacer(),
             Align(
                 alignment: Alignment.bottomRight,
-                child: DefaultButton(
+                child: CustomButton(
                     onTap: () {
                       context.pushReplacementNamed(Routes.homeScreen,
                           arguments: choosedTopics);
