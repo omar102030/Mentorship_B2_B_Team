@@ -5,9 +5,12 @@ import 'package:mentorship/features/launchpad/presentation/widgets/bottom_positi
 
 import '../../../../core/theming/text_styles.dart';
 
-class DragonHorizontalCardWidget extends StatelessWidget {
+class DragonCardWidget extends StatelessWidget {
   final DragonModel dragonModel;
-  const DragonHorizontalCardWidget({super.key, required this.dragonModel});
+  final double? hight;
+  final double? width;
+  const DragonCardWidget(
+      {super.key, required this.dragonModel, this.hight, this.width});
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +19,8 @@ class DragonHorizontalCardWidget extends StatelessWidget {
       child: Stack(
         children: [
           Container(
-            width: MediaQuery.of(context).size.width / 2,
-            height: double.infinity,
+            width: width ?? MediaQuery.of(context).size.width / 2,
+            height: hight ?? double.infinity,
             decoration: BoxDecoration(
                 image: DecorationImage(
                     image: NetworkImage(dragonModel.flickrImages[1]),

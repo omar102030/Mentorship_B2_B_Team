@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mentorship/features/dragons/data/repos/dargons_repo.dart';
-import 'package:mentorship/features/dragons/logic/cubit/dragons_state.dart';
+import 'package:mentorship/features/dragons/logic/dragons_cubit/dragons_state.dart';
 
 class DragonsCubit extends Cubit<DragonsState> {
   final DragonsRepo _dragonsRepo;

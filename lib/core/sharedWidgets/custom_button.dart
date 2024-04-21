@@ -7,37 +7,38 @@ class CustomButton extends StatelessWidget {
   final String text;
   final Color? buttonColor;
   final TextStyle? textStyle;
-  final double? hight;
-  final double? width;
-  final EdgeInsetsGeometry? buttonPadding;
+
+  final EdgeInsets? buttonPadding;
   const CustomButton(
       {super.key,
       required this.onTap,
       required this.text,
       this.buttonColor,
       this.textStyle,
-      this.hight,
-      this.width,
       this.buttonPadding});
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-        onTap: onTap,
-        child: Container(
-          height: hight,
-          width: width,
-          padding: buttonPadding ??
-              EdgeInsets.symmetric(vertical: 10.h, horizontal: 20.w),
-          decoration: BoxDecoration(
-            color: buttonColor ?? Colors.white,
-            borderRadius: BorderRadius.circular(5.r),
+    return ElevatedButton(
+        onPressed: onTap,
+        style: ButtonStyle(
+          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(5.r),
+            ),
           ),
-          child: Text(
-            text,
-            style: textStyle ??
-                TextStyles.bodyMedium.copyWith(color: Colors.black),
+          backgroundColor: MaterialStatePropertyAll(
+            buttonColor ?? Colors.white,
           ),
+          padding: MaterialStateProperty.all<EdgeInsets>(
+            buttonPadding ??
+                EdgeInsets.symmetric(vertical: 10.h, horizontal: 20.w),
+          ),
+        ),
+        child: Text(
+          text,
+          style:
+              textStyle ?? TextStyles.bodyMedium.copyWith(color: Colors.black),
         ));
   }
 }

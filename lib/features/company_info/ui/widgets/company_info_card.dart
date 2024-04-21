@@ -6,6 +6,7 @@ import 'package:mentorship/core/helpers/extensions.dart';
 import 'package:mentorship/core/sharedWidgets/custom_button.dart';
 import 'package:mentorship/core/theming/colors_manager.dart';
 import 'package:mentorship/core/theming/text_styles.dart';
+import 'package:mentorship/features/company_info/ui/widgets/custom_info_text_widget.dart';
 
 class CompanyInfoCard extends StatelessWidget {
   const CompanyInfoCard({super.key});
@@ -26,93 +27,41 @@ class CompanyInfoCard extends StatelessWidget {
               ),
               height: 200.h,
               width: double.infinity,
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.h),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Image.asset(
-                      'assets/images/spacex-logo.png',
-                      height: 25.h,
-                    ),
-                    const Spacer(),
-                    Text.rich(
-                      TextSpan(
-                        children: [
-                          TextSpan(
-                              text: 'Founder/Ceo :  ',
-                              style: TextStyles.bodySmall
-                                  .copyWith(fontWeight: FontWeight.bold)),
-                          TextSpan(
-                            text: 'Elon Musk',
-                            style: TextStyles.bodyMediumBlack
-                                .copyWith(fontSize: 12.sp),
-                          ),
-                        ],
-                      ),
-                    ),
-                    5.ph,
-                    Text.rich(
-                      TextSpan(
-                        children: [
-                          TextSpan(
-                              text: 'Coo :  ',
-                              style: TextStyles.bodySmall
-                                  .copyWith(fontWeight: FontWeight.bold)),
-                          TextSpan(
-                            text: 'Gwynne Shotwell',
-                            style: TextStyles.bodyMediumBlack
-                                .copyWith(fontSize: 12.sp),
-                          ),
-                        ],
-                      ),
-                    ),
-                    5.ph,
-                    Text.rich(
-                      TextSpan(
-                        children: [
-                          TextSpan(
-                              text: 'Cto Propulsion :  ',
-                              style: TextStyles.bodySmall
-                                  .copyWith(fontWeight: FontWeight.bold)),
-                          TextSpan(
-                            text: 'Tom Mueller',
-                            style: TextStyles.bodyMediumBlack
-                                .copyWith(fontSize: 12.sp),
-                          ),
-                        ],
-                      ),
-                    ),
-                    5.ph,
-                    Text.rich(
-                      TextSpan(
-                        children: [
-                          TextSpan(
-                              text: 'Valuation :  ',
-                              style: TextStyles.bodySmall
-                                  .copyWith(fontWeight: FontWeight.bold)),
-                          TextSpan(
-                            text: '74000000000 \$',
-                            style: TextStyles.bodyMediumBlack
-                                .copyWith(fontSize: 12.sp),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const Spacer(),
-                    CustomButton(
-                      onTap: () {},
-                      text: 'View Details',
-                      buttonColor: Colors.black,
-                      textStyle: TextStyles.bodyMedium,
-                    )
-                  ],
-                ),
+              padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.h),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Image.asset(
+                    'assets/images/spacex-logo.png',
+                    height: 25.h,
+                  ),
+                  const Spacer(),
+                  const CustomInfoTextWidget(
+                      firstText: 'Founder/Ceo :  ', seconedText: 'Elon Musk'),
+                  5.ph,
+                  const CustomInfoTextWidget(
+                      firstText: 'Coo :  ', seconedText: 'Gwynne Shotwell'),
+                  5.ph,
+                  const CustomInfoTextWidget(
+                      firstText: 'Cto Propulsion :  ',
+                      seconedText: 'Tom Mueller'),
+                  5.ph,
+                  const CustomInfoTextWidget(
+                      firstText: 'Valuation :  ',
+                      seconedText: '74000000000 \$'),
+                  const Spacer(),
+                  CustomButton(
+                    onTap: () {},
+                    text: 'View Details',
+                    buttonColor: Colors.black,
+                    textStyle: TextStyles.bodyMedium,
+                  )
+                ],
               )),
         ),
       ),
       Positioned(
-          top: 25.h,
+          top: 30.h,
           bottom: 30.h,
           right: 5.w,
           child: Container(
@@ -123,7 +72,7 @@ class CompanyInfoCard extends StatelessWidget {
                 border:
                     Border.all(color: ColorsManager.scaffoldColor, width: 3),
                 image: const DecorationImage(
-                    fit: BoxFit.cover,
+                    fit: BoxFit.fitWidth,
                     image: CachedNetworkImageProvider(
                         'https://i.redd.it/diq7uy1paooc1.png'))),
           )),
