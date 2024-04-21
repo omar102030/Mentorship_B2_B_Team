@@ -21,7 +21,7 @@ class OnBoardingScreenWidget extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 20.w),
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('assets/images/${screenContent.image}.png'),
+                image: AssetImage(screenContent.image),
                 fit: BoxFit.fill)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mentorship/core/assets/app_assets.dart';
 
 class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
   const DefaultAppBar({super.key});
@@ -9,7 +10,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       titleSpacing: 24,
       title: Image.asset(
-        "assets/images/app_logo.png",
+        AppImages.logo,
         width: 150.sp,
       ),
       actions: [

@@ -29,12 +29,12 @@ class AppRouter {
       case Routes.launchpadScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) =>
-                LaunchpadCubit(serviceLocator())..getLaunchpads(),
+            create: (context) => LaunchpadCubit(getIt())..getLaunchpads(),
             child: const LaunchpadsScreen(),
           ),
         );
 
+      case Routes.launchpadDetailScreen:
       case Routes.launchpadDetailScreen:
         return MaterialPageRoute(
           builder: (_) => LaunchpadDetailsScreen(
