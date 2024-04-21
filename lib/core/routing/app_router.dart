@@ -15,7 +15,6 @@ import '../../features/launchpad/presentation/cubit/launchpad_cubit.dart';
 import '../../features/launchpad/presentation/pages/launchpad_details_screen.dart';
 import '../../features/launchpad/presentation/pages/launchpads_screen.dart';
 
-
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
     final arguments = settings.arguments;
@@ -30,15 +29,14 @@ class AppRouter {
       case Routes.launchpadScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) =>
-                LaunchpadCubit(serviceLocator())..getLaunchpads(),
+            create: (context) => LaunchpadCubit(getIt())..getLaunchpads(),
             child: const LaunchpadsScreen(),
           ),
         );
 
-        case Routes.launchpadDetailScreen:
+      case Routes.launchpadDetailScreen:
         return MaterialPageRoute(
-          builder: (_) =>  LaunchpadDetailsScreen(
+          builder: (_) => LaunchpadDetailsScreen(
             launchpad: arguments as LaunchpadModel,
           ),
         );

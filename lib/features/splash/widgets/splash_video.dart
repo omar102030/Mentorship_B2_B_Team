@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:mentorship/core/assets/app_assets.dart';
 import 'package:mentorship/core/helpers/extensions.dart';
 import 'package:video_player/video_player.dart';
 
@@ -23,7 +24,7 @@ class _SplashVideoState extends State<SplashVideo> {
       context.pushNamedAndRemoveUntil(Routes.onBoardingScreen,
           predicate: (route) => false);
     });
-    _controller = VideoPlayerController.asset('assets/videos/splash_video.mp4')
+    _controller = VideoPlayerController.asset(AppVideos.intro)
       ..addListener(_updateState)
       ..setLooping(true)
       ..initialize().then((_) => _controller.play()).catchError((error) {});

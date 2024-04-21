@@ -37,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen>
     });
 
     _launchpadCubit = LaunchpadCubit(
-      serviceLocator<LaunchpadRepo>(),
+      getIt<LaunchpadRepo>(),
     );
   }
 

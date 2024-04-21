@@ -11,10 +11,7 @@ class CustomTabBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-
     return TabBar(
-
       labelColor: Colors.black,
       indicatorColor: Colors.transparent,
       unselectedLabelColor: Colors.black,
@@ -24,8 +21,12 @@ class CustomTabBar extends StatelessWidget {
         Tab(
           icon: iconBorder(
             (tabController.index == 0)
-                ? const Icon(
-                    Icons.home,
+                ? const Row(
+                    children: [
+                      Icon(
+                        Icons.home,
+                      ),
+                    ],
                   )
                 : const Icon(
                     Icons.home_outlined,
