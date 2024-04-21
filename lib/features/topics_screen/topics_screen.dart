@@ -17,7 +17,6 @@ class TopicsScreen extends StatefulWidget {
 
 class _TopicsScreenState extends State<TopicsScreen> {
   List<TopicsEnum> topics = [
-    TopicsEnum.missions,
     TopicsEnum.ships,
     TopicsEnum.capsules,
     TopicsEnum.starLinks,
@@ -77,7 +76,7 @@ class _TopicsScreenState extends State<TopicsScreen> {
             const Spacer(),
             Align(
                 alignment: Alignment.bottomRight,
-                child: DefaultButton(
+                child: CustomButton(
                     onTap: () {
                       context.pushReplacementNamed(Routes.homeScreen,
                           arguments: choosedTopics);

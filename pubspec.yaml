@@ -47,6 +47,8 @@ dependencies:
   retrofit: ^4.1.0
   video_player: ^2.8.6
   flutter_svg: ^2.0.10+1
+  cached_network_image: ^3.3.1
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_launcher_icons: ^0.13.1
@@ -74,6 +76,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/svgs/
     - assets/videos/
 
   fonts:

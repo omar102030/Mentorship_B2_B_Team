@@ -7,8 +7,8 @@ import 'bottom_positioned_shadow.dart';
 import 'view_details_button.dart';
 
 class LaunchpadCard extends StatelessWidget {
-  LaunchpadModel launchpad;
-  LaunchpadCard({
+  final LaunchpadModel launchpad;
+  const LaunchpadCard({
     super.key,
     required this.launchpad,
   });

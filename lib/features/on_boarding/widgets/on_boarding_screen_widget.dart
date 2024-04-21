@@ -21,8 +21,7 @@ class OnBoardingScreenWidget extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 20.w),
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage(screenContent.image),
-                fit: BoxFit.fill)),
+                image: AssetImage(screenContent.image), fit: BoxFit.fill)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -48,7 +47,7 @@ class OnBoardingScreenWidget extends StatelessWidget {
             screenContent.i == 2
                 ? Align(
                     alignment: Alignment.centerRight,
-                    child: DefaultButton(
+                    child: CustomButton(
                         onTap: () {
                           context.pushNamedAndRemoveUntil(Routes.topicsScreen,
                               predicate: (route) => false);

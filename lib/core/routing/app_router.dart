@@ -35,7 +35,6 @@ class AppRouter {
         );
 
       case Routes.launchpadDetailScreen:
-      case Routes.launchpadDetailScreen:
         return MaterialPageRoute(
           builder: (_) => LaunchpadDetailsScreen(
             launchpad: arguments as LaunchpadModel,

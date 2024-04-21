@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mentorship/core/theming/text_styles.dart';
 
-class DefaultButton extends StatelessWidget {
+class CustomButton extends StatelessWidget {
   final VoidCallback onTap;
   final String text;
   final Color? buttonColor;
@@ -10,7 +10,7 @@ class DefaultButton extends StatelessWidget {
   final double? hight;
   final double? width;
   final EdgeInsetsGeometry? buttonPadding;
-  const DefaultButton(
+  const CustomButton(
       {super.key,
       required this.onTap,
       required this.text,
@@ -22,7 +22,7 @@ class DefaultButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
         onTap: onTap,
         child: Container(
           height: hight,

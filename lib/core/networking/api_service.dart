@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:mentorship/core/networking/api_constants.dart';
+import 'package:mentorship/features/dragons/data/models/dragon_model.dart';
 import 'package:mentorship/features/rockets/data/models/rockets_model.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -11,14 +12,10 @@ part 'api_service.g.dart';
 abstract class ApiService {
   factory ApiService(Dio dio, {String baseUrl}) = _ApiService;
 
-
   @GET(ApiConstants.getRockets)
-  Future<List<RocketsModel>> getRockets(
-
-  );
- @GET(ApiConstants.getLaunchpads)
-  Future<List<LaunchpadModel>> getLaunchpads(
-
-  );
-
+  Future<List<RocketsModel>> getRockets();
+  @GET(ApiConstants.getLaunchpads)
+  Future<List<LaunchpadModel>> getLaunchpads();
+  @GET(ApiConstants.getDragons)
+  Future<List<DragonModel>> getDragons();
 }
