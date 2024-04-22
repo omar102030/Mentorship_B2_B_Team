@@ -5,30 +5,44 @@ import 'package:mentorship/core/theming/text_styles.dart';
 class CustomButton extends StatelessWidget {
   final VoidCallback onTap;
   final String text;
-  final Color? buttonColor;
+  final Color buttonColor;
+  final Color foregroundColor;
   final TextStyle? textStyle;
+  final double? height;
+  final double? width;
 
   final EdgeInsets? buttonPadding;
   const CustomButton(
       {super.key,
       required this.onTap,
       required this.text,
-      this.buttonColor,
+      this.buttonColor = Colors.white,
+      this.foregroundColor = Colors.black,
       this.textStyle,
-      this.buttonPadding});
+      this.buttonPadding,
+      this.height,
+      this.width});
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
         onPressed: onTap,
         style: ButtonStyle(
+          fixedSize: (height == null && width == null)
+              ? null
+              : MaterialStateProperty.all<Size>(
+                  Size(
+                  width ?? 30.h,
+                  height ?? double.infinity,),
+                ),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(5.r),
             ),
           ),
+          foregroundColor: MaterialStatePropertyAll(foregroundColor),
           backgroundColor: MaterialStatePropertyAll(
-            buttonColor ?? Colors.white,
+            buttonColor,
           ),
           padding: MaterialStateProperty.all<EdgeInsets>(
             buttonPadding ??
@@ -37,8 +51,10 @@ class CustomButton extends StatelessWidget {
         ),
         child: Text(
           text,
-          style:
-              textStyle ?? TextStyles.bodyMedium.copyWith(color: Colors.black),
-        ));
+          style: textStyle ??
+              TextStyles.bodyMedium.copyWith(
+                color: foregroundColor,
+              ),
+        ), );
   }
 }
