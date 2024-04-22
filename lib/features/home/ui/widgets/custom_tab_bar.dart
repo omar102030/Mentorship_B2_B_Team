@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mentorship/features/home/ui/widgets/icon_border.dart';
+
+import 'custom_tab_icon.dart';
 
 class CustomTabBar extends StatelessWidget {
   const CustomTabBar({
@@ -17,49 +18,50 @@ class CustomTabBar extends StatelessWidget {
       unselectedLabelColor: Colors.black,
       dividerColor: Colors.transparent,
       controller: tabController,
+      labelPadding: const EdgeInsets.all(0),
       tabs: [
-        Tab(
-          icon: iconBorder(
-            (tabController.index == 0)
-                ? const Row(
-                    children: [
-                      Icon(
-                        Icons.home,
-                      ),
-                    ],
-                  )
-                : const Icon(
-                    Icons.home_outlined,
-                  ),
+        CustomTabIcon(
+          tabController: tabController,
+          index: 0,
+          label: 'Home',
+          selectedIcon: const Icon(
+            Icons.home,
+          ),
+          unselectedIcon: const Icon(
+            Icons.home_outlined,
           ),
         ),
-        Tab(
-          icon: iconBorder(
-            (tabController.index == 1)
-                ? const Icon(
-                    Icons.assignment_returned,
-                  )
-                : const Icon(
-                    Icons.assignment_returned_outlined,
-                  ),
+        CustomTabIcon(
+          tabController: tabController,
+          index: 1,
+          label: 'Launchpad',
+          selectedIcon: const Icon(
+            Icons.assignment_returned,
+          ),
+          unselectedIcon: const Icon(
+            Icons.assignment_returned_outlined,
           ),
         ),
-        Tab(
-          icon: iconBorder(
-            (tabController.index == 2)
-                ? const Icon(
-                    Icons.rocket_launch_sharp,
-                  )
-                : const Icon(Icons.rocket_launch_outlined),
+        CustomTabIcon(
+          tabController: tabController,
+          index: 2,
+          label: 'Rockets',
+          selectedIcon: const Icon(
+            Icons.rocket_launch_sharp,
+          ),
+          unselectedIcon: const Icon(
+            Icons.rocket_launch_outlined,
           ),
         ),
-        Tab(
-          icon: iconBorder(
-            (tabController.index == 3)
-                ? const Icon(
-                    Icons.favorite,
-                  )
-                : const Icon(Icons.favorite_border),
+        CustomTabIcon(
+          tabController: tabController,
+          index: 3,
+          label: 'Favorite',
+          selectedIcon: const Icon(
+            Icons.favorite,
+          ),
+          unselectedIcon: const Icon(
+            Icons.favorite_border,
           ),
         ),
       ],

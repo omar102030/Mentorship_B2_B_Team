@@ -4,16 +4,23 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 Widget iconBorder(
   Widget icon,
 ) {
-    final _borderRadius = 1.5;
+  const borderWidth = 2.0;
 
   return Container(
+      padding: EdgeInsets.all(4.r),
       decoration: BoxDecoration(
-        borderRadius:  BorderRadius.all(Radius.circular(10.r)),
-        border: Border(
-          left: BorderSide(color: Colors.black, width: _borderRadius),
-          right: BorderSide(color: Colors.black, width: _borderRadius),
-          top: BorderSide(color: Colors.black, width: _borderRadius),
-          bottom: BorderSide(color: Colors.black, width: _borderRadius),
+        borderRadius: BorderRadius.all(
+          Radius.circular(10.r),
+        ),
+        shape: BoxShape.rectangle,
+        border: const Border(
+          left: BorderSide(
+            color: Colors.black,
+            width: borderWidth,
+          ),
+          right: BorderSide(color: Colors.black, width: borderWidth),
+          top: BorderSide(color: Colors.black, width: borderWidth),
+          bottom: BorderSide(color: Colors.black, width: borderWidth),
         ),
       ),
       child: icon);
