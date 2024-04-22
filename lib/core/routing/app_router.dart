@@ -5,7 +5,7 @@ import 'package:mentorship/core/routing/routes.dart';
 import 'package:mentorship/features/dragons/data/models/dragon_model.dart';
 import 'package:mentorship/features/dragons/ui/dragons_screen.dart';
 import 'package:mentorship/features/rockets/ui/rocketsScreen.dart';
-import 'package:mentorship/features/splash/splash_screen.dart';
+import 'package:mentorship/features/splash_screen/splash_screen.dart';
 import 'package:mentorship/features/topics_screen/enums/topics_enum.dart';
 import 'package:mentorship/features/topics_screen/topics_screen.dart';
 import 'package:page_transition/page_transition.dart';

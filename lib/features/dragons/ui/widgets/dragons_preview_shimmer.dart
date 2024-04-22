@@ -21,7 +21,7 @@ class DragonsPreviewShimmer extends StatelessWidget {
                 height: 150.h,
               ),
             ),
-            10.pw,
+            10.emptyWidth,
             Expanded(
               child: Container(
                 height: 150.h,

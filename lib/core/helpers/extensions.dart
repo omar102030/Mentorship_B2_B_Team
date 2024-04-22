@@ -21,10 +21,10 @@ extension Navigation on BuildContext {
 }
 
 extension EmptySpacing on num {
-  SizedBox get ph => SizedBox(
+  SizedBox get emptyHight => SizedBox(
         height: toDouble().h,
       );
-  SizedBox get pw => SizedBox(
+  SizedBox get emptyWidth => SizedBox(
         width: toDouble().w,
       );
 }

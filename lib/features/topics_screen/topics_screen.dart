@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mentorship/core/helpers/extensions.dart';
 import 'package:mentorship/core/routing/routes.dart';
@@ -47,17 +46,17 @@ class _TopicsScreenState extends State<TopicsScreen> {
               'Help Us',
               style: TextStyles.bodyMedium,
             ),
-            10.ph,
+            10.emptyHight,
             Text(
               'Personalize your content',
               style: TextStyles.titleLarge,
             ),
-            10.ph,
+            10.emptyHight,
             Text(
               'Pick all the topics that interest you and your “Today” page will show the content you want to see',
               style: TextStyles.bodyMedium,
             ),
-            25.ph,
+            25.emptyHight,
             Wrap(
               spacing: 10.w,
               runSpacing: 10.h,
@@ -82,7 +81,7 @@ class _TopicsScreenState extends State<TopicsScreen> {
                           arguments: choosedTopics);
                     },
                     text: 'Done')),
-            50.ph
+            50.emptyHight
           ],
         ),
       ),

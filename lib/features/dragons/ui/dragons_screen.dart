@@ -24,7 +24,7 @@ class DragonsScreen extends StatelessWidget {
                   hight: 350.h,
                   width: double.infinity,
                 ),
-            separatorBuilder: (context, index) => 20.ph,
+            separatorBuilder: (context, index) => 20.emptyHight,
             itemCount: dragonList.length),
       ),
     );

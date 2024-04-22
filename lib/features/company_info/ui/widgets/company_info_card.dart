@@ -38,14 +38,14 @@ class CompanyInfoCard extends StatelessWidget {
                   const Spacer(),
                   const CustomInfoTextWidget(
                       firstText: 'Founder/Ceo :  ', seconedText: 'Elon Musk'),
-                  5.ph,
+                  5.emptyHight,
                   const CustomInfoTextWidget(
                       firstText: 'Coo :  ', seconedText: 'Gwynne Shotwell'),
-                  5.ph,
+                  5.emptyHight,
                   const CustomInfoTextWidget(
                       firstText: 'Cto Propulsion :  ',
                       seconedText: 'Tom Mueller'),
-                  5.ph,
+                  5.emptyHight,
                   const CustomInfoTextWidget(
                       firstText: 'Valuation :  ',
                       seconedText: '74000000000 \$'),
