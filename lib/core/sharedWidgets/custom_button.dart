@@ -31,7 +31,9 @@ class CustomButton extends StatelessWidget {
           fixedSize: (height == null && width == null)
               ? null
               : MaterialStateProperty.all<Size>(
-                  Size(height ?? double.infinity, width ?? 30.h),
+                  Size(
+                  width ?? 30.h,
+                  height ?? double.infinity,),
                 ),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
