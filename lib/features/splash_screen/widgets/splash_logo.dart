@@ -15,7 +15,7 @@ class SplashLogo extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Image.asset(AppImages.logo),
-          6.ph,
+          6.emptyHight,
           SizedBox(
             height: 50.h,
             child: const SpinKitThreeBounce(

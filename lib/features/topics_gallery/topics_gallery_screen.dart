@@ -27,9 +27,9 @@ class _TopicsGalleryScreenState extends State<TopicsGalleryScreen> {
               'Company Info :-',
               style: TextStyles.titleMedium,
             ),
-            10.ph,
+            10.emptyHight,
             const CompanyInfoCard(),
-            20.ph,
+            20.emptyHight,
 
             //?___________________________________
             ...widget.topics.map((e) => e.getTopicDesignWidget)

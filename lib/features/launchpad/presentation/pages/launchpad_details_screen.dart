@@ -45,12 +45,12 @@ class LaunchpadDetailsScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              16.ph,
+              16.emptyHight,
               Text(
                 '    ${launchpad.details}',
                 style: TextStyles.bodyMedium,
               ),
-              16.ph,
+              16.emptyHight,
               LaunchpadDetailsTable(launchpad: launchpad)
             ],
           ),

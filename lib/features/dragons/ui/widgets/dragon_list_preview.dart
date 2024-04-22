@@ -31,7 +31,7 @@ class DragonsListPreviewWidget extends StatelessWidget {
                       context.pushNamed(Routes.dragonsScreen,
                           arguments: state.data);
                     }),
-                10.ph,
+                10.emptyHight,
                 SizedBox(
                   height: 150.h,
                   child: ListView.separated(
@@ -40,7 +40,7 @@ class DragonsListPreviewWidget extends StatelessWidget {
                       itemBuilder: (context, index) => DragonCardWidget(
                             dragonModel: state.data[index],
                           ),
-                      separatorBuilder: (context, index) => 10.pw,
+                      separatorBuilder: (context, index) => 10.emptyWidth,
                       itemCount: state.data.length),
                 )
               ],

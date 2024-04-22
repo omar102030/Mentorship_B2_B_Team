@@ -25,17 +25,17 @@ class OnBoardingScreenWidget extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            100.ph,
+            100.emptyHight,
             Text(
               screenContent.title,
               style: TextStyles.titleLarge,
             ),
-            20.ph,
+            20.emptyHight,
             Text(
               screenContent.text,
               style: TextStyles.bodyMedium,
             ),
-            15.ph,
+            15.emptyHight,
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: List.generate(
@@ -43,7 +43,7 @@ class OnBoardingScreenWidget extends StatelessWidget {
                 (index) => DotWidget(dotIndex: index, index: screenContent.i),
               ),
             ),
-            15.ph,
+            15.emptyHight,
             screenContent.i == 2
                 ? Align(
                     alignment: Alignment.centerRight,
