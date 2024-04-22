@@ -32,6 +32,7 @@ class _LaunchpadsScreenState extends State<LaunchpadsScreen> {
           return const Center(child: CircularProgressIndicator());
         } else if (state is LaunchpadLoaded) {
           return ListView.builder(
+            key: const ValueKey('launchpads'),
             itemCount: state.data.length,
             itemBuilder: (context, index) {
               return LaunchpadCard(

@@ -22,10 +22,11 @@ class DragonCardWidget extends StatelessWidget {
             width: width ?? MediaQuery.of(context).size.width / 2,
             height: hight ?? double.infinity,
             decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: NetworkImage(dragonModel.flickrImages[1]),
-                    fit: BoxFit.cover),
-                borderRadius: BorderRadius.circular(10.r)),
+              image: DecorationImage(
+                  image: NetworkImage(dragonModel.flickrImages[1]),
+                  fit: BoxFit.cover),
+              borderRadius: BorderRadius.circular(10.r),
+            ),
           ),
           const BottomPositionedShadow(),
           Positioned(
