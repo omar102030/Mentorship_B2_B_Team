@@ -19,5 +19,6 @@ void setupGetIt() {
 
   getIt.registerLazySingleton<DragonsRepo>(
       () => DragonsRepo(getIt<ApiService>()));
-  getIt.registerFactory<DragonsCubit>(() => DragonsCubit(getIt<DragonsRepo>()));
+  getIt.registerLazySingleton<DragonsCubit>(
+      () => DragonsCubit(getIt<DragonsRepo>())..emitGetDragons());
 }

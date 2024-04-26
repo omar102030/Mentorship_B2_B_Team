@@ -6,15 +6,10 @@ import 'package:mentorship/features/company_info/ui/widgets/company_info_card.da
 import '../../core/theming/text_styles.dart';
 import '../topics_screen/enums/topics_enum.dart';
 
-class TopicsGalleryScreen extends StatefulWidget {
+class TopicsGalleryScreen extends StatelessWidget {
   final List<TopicsEnum> topics;
   const TopicsGalleryScreen({super.key, required this.topics});
 
-  @override
-  State<TopicsGalleryScreen> createState() => _TopicsGalleryScreenState();
-}
-
-class _TopicsGalleryScreenState extends State<TopicsGalleryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,9 +25,7 @@ class _TopicsGalleryScreenState extends State<TopicsGalleryScreen> {
             10.emptyHight,
             const CompanyInfoCard(),
             20.emptyHight,
-
-            //?___________________________________
-            ...widget.topics.map((e) => e.getTopicDesignWidget)
+            ...topics.map((e) => e.getTopicDesignWidget)
           ],
         ),
       ),

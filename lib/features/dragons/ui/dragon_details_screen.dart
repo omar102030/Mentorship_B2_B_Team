@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 
 class DragonDetailsScreen extends StatelessWidget {
-  const DragonDetailsScreen({super.key});
+  final String dragonId;
+  const DragonDetailsScreen({super.key, required this.dragonId});
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Dragon Details'),
+      ),
+    );
   }
 }

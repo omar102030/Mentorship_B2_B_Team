@@ -16,8 +16,8 @@ class DragonsListPreviewWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => getIt<DragonsCubit>()..emitGetDragons(),
+    return BlocProvider.value(
+      value: getIt<DragonsCubit>(),
       child: BlocBuilder<DragonsCubit, DragonsState>(
         builder: (context, state) {
           if (state is DragonsLoading) {

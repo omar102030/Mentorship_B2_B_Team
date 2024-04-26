@@ -1,10 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mentorship/core/helpers/extensions.dart';
 import 'package:mentorship/core/sharedWidgets/custom_button.dart';
-import 'package:mentorship/core/theming/colors_manager.dart';
 import 'package:mentorship/core/theming/text_styles.dart';
 import 'package:mentorship/features/company_info/ui/widgets/custom_info_text_widget.dart';
 
@@ -17,6 +15,7 @@ class CompanyInfoCard extends StatelessWidget {
       Container(
         decoration: BoxDecoration(
             // border: Border.all(color: Colors.white, width: 1),
+            color: Colors.grey,
             borderRadius: BorderRadius.circular(10.r)),
         child: ClipPath(
           clipper: CustomClipPath(),
@@ -69,8 +68,7 @@ class CompanyInfoCard extends StatelessWidget {
             width: 100.w,
             decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                border:
-                    Border.all(color: ColorsManager.scaffoldColor, width: 3),
+                border: Border.all(color: Colors.grey, width: 3),
                 image: const DecorationImage(
                     fit: BoxFit.fitWidth,
                     image: CachedNetworkImageProvider(
