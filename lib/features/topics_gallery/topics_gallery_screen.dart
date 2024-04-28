@@ -14,7 +14,12 @@ class TopicsGalleryScreen extends StatefulWidget {
   State<TopicsGalleryScreen> createState() => _TopicsGalleryScreenState();
 }
 
-class _TopicsGalleryScreenState extends State<TopicsGalleryScreen> {
+class _TopicsGalleryScreenState extends State<TopicsGalleryScreen>
+    with AutomaticKeepAliveClientMixin {
+      
+  @override
+  bool get wantKeepAlive => true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
