@@ -27,7 +27,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
 
   List<OnBoardingScreensEnum> screensContent = [
     OnBoardingScreensEnum.first,
-    OnBoardingScreensEnum.seconed,
+    OnBoardingScreensEnum.second,
     OnBoardingScreensEnum.third,
   ];
   @override

@@ -7,7 +7,7 @@ enum OnBoardingScreensEnum {
           'Discover the world\'s leading private aerospace manufacturer and space transport services company.',
       image: AppImages.firstOnboardingImage,
       i: 0),
-  seconed(
+  second(
       title: 'Revolutionizing Space Travel',
       text:
           'Explore SpaceX\'s groundbreaking advancements in rocket technology.',
