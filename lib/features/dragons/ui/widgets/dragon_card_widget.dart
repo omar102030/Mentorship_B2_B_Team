@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mentorship/core/helpers/extensions.dart';
+import 'package:mentorship/core/routing/routes.dart';
 import 'package:mentorship/features/dragons/data/models/dragon_model.dart';
 import 'package:mentorship/features/launchpad/presentation/widgets/bottom_positioned_shadow.dart';
 
@@ -15,7 +17,9 @@ class DragonCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        context.pushNamed(Routes.dragonDetailsScreen, arguments: dragonModel);
+      },
       child: Stack(
         children: [
           Container(

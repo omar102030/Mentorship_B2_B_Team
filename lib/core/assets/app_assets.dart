@@ -8,6 +8,7 @@ class AppImages {
   static const String thirdOnboardingImage =
       'assets/images/third_onboarding_image.png';
   static const String android12Splash = 'assets/images/android_12_splash.png';
+  static const String wikipediaImage = 'assets/images/wikipedia_link.png';
 }
 
 class AppVideos {

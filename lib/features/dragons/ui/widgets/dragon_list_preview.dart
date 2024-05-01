@@ -41,12 +41,13 @@ class DragonsListPreviewWidget extends StatelessWidget {
                             dragonModel: state.data[index],
                           ),
                       separatorBuilder: (context, index) => 10.emptyWidth,
-                      itemCount: state.data.length),
+                      itemCount:
+                          state.data.length >= 3 ? 3 : state.data.length),
                 )
               ],
             );
           } else if (state is DragonsError) {
-            return Center(child: Text(state.message));
+            return const SizedBox();
           }
           return const SizedBox();
         },
