@@ -108,7 +108,7 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<DragonModel> getDragonDetails() async {
+  Future<DragonModel> getDragonDetails(String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -121,7 +121,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'dragon',
+              'dragons/${id}',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -131,6 +131,33 @@ class _ApiService implements ApiService {
               baseUrl,
             ))));
     final value = DragonModel.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<CompanyInfoModel> getCompanyInfo() async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<CompanyInfoModel>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'company',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = CompanyInfoModel.fromJson(_result.data!);
     return value;
   }
 

@@ -7,7 +7,7 @@ import 'package:mentorship/core/theming/colors_manager.dart';
 import 'package:mentorship/features/topics_gallery/topics_gallery_screen.dart';
 import 'package:mentorship/features/topics_screen/enums/topics_enum.dart';
 
-import '../../../core/sharedWidgets/default_appbar.dart';
+import '../../../core/widgets/default_appbar.dart';
 import '../../launchpad/data/repositories/launchpad_repo.dart';
 import '../../launchpad/presentation/cubit/launchpad_cubit.dart';
 import '../../launchpad/presentation/pages/launchpads_screen.dart';

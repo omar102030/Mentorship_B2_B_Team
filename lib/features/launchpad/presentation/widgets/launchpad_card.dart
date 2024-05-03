@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mentorship/core/helpers/extensions.dart';
-import 'package:mentorship/core/sharedWidgets/shimmer_box.dart';
+import 'package:mentorship/core/widgets/shimmer_box.dart';
 import 'package:mentorship/core/theming/text_styles.dart';
 import 'package:mentorship/features/launchpad/data/models/launchpad_model.dart';
 
 import '../../../../core/routing/routes.dart';
-import '../../../../core/sharedWidgets/custom_button.dart';
+import '../../../../core/widgets/custom_button.dart';
 import '../../../../core/theming/colors_manager.dart';
 import 'bottom_positioned_shadow.dart';
 
