@@ -11,7 +11,7 @@ class DragonDetailsRepo {
 
   Future<ApiResult<DragonModel>> getDragonDetails(String dragonId) async {
     try {
-      final response = await _apiService.getDragonDetails();
+      final response = await _apiService.getDragonDetails(dragonId);
       return ApiResult.success(response);
     } catch (errro) {
       return ApiResult.failure(ErrorHandler.handle(errro));

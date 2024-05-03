@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mentorship/core/helpers/extensions.dart';
 import 'package:mentorship/core/theming/text_styles.dart';
 
-import '../../../../core/sharedWidgets/default_appbar.dart';
+import '../../../../core/widgets/default_appbar.dart';
 import '../../data/models/launchpad_model.dart';
 import '../widgets/bottom_positioned_shadow.dart';
 import '../widgets/launchpad_details_table.dart';

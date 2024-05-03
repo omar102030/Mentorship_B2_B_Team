@@ -5,7 +5,7 @@ import 'package:mentorship/core/routing/routes.dart';
 import 'package:mentorship/core/theming/colors_manager.dart';
 import 'package:mentorship/features/launchpad/data/models/launchpad_model.dart';
 
-import '../../../../core/sharedWidgets/custom_button.dart';
+import '../../../../core/widgets/custom_button.dart';
 
 class LaunchpadViewDetailsButton extends StatelessWidget {
   const LaunchpadViewDetailsButton({

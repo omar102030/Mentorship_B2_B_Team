@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mentorship/core/helpers/extensions.dart';
 import 'package:mentorship/core/routing/routes.dart';
-import 'package:mentorship/core/sharedWidgets/custom_preview_headline_widget.dart';
+import 'package:mentorship/core/widgets/custom_preview_headline_widget.dart';
 import 'package:mentorship/features/dragons/logic/dragons_cubit/dragons_cubit.dart';
 import 'package:mentorship/features/dragons/logic/dragons_cubit/dragons_state.dart';
 import 'package:mentorship/features/dragons/ui/widgets/dragon_card_widget.dart';
