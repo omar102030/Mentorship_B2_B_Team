@@ -4,6 +4,7 @@ class ApiConstants {
   static String getOneRocket(id) => '$getRockets$id';
   static const String getLaunchpads = 'launchpads/';
   static const String getDragons = 'dragons';
+  static const String getDragonDetails = 'dragon';
 }
 
 class ApiErrors {

@@ -49,6 +49,7 @@ dependencies:
   flutter_svg: ^2.0.10+1
   cached_network_image: ^3.3.1
   shimmer: ^3.0.0
+  webview_flutter: ^4.7.0
 
 dev_dependencies:
   flutter_launcher_icons: ^0.13.1

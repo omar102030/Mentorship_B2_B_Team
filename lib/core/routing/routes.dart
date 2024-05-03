@@ -8,4 +8,7 @@ class Routes {
   static const String launchpadScreen = '/launchpadScreen';
   static const String launchpadDetailScreen = '/launchpadDetailScreen';
   static const String dragonsScreen = '/dragonsScreen';
+  static const String dragonDetailsScreen = '/dragonDetailsScreen';
+  static const String dragonDetailsFromIdScreen = '/dragonDetailsFromIdScreen';
+  static const String webViewScreen = '/webViewScreen';
 }

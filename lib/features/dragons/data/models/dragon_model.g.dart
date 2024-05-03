@@ -10,11 +10,11 @@ DragonModel _$DragonModelFromJson(Map<String, dynamic> json) => DragonModel(
       name: json['name'] as String,
       type: json['type'] as String,
       active: json['active'] as bool,
-      crewCapacity: json['crew_capacity'] as int,
+      crewCapacity: (json['crew_capacity'] as num).toInt(),
       id: json['id'] as String,
       description: json['description'] as String,
       wikipediaLink: json['wikipedia'] as String,
-      orbitDurationInYears: json['orbit_duration_yr'] as int,
+      orbitDurationInYears: (json['orbit_duration_yr'] as num).toInt(),
       thrusters: (json['thrusters'] as List<dynamic>)
           .map((e) => Thruster.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -41,11 +41,11 @@ Map<String, dynamic> _$DragonModelToJson(DragonModel instance) =>
 
 Thruster _$ThrusterFromJson(Map<String, dynamic> json) => Thruster(
       type: json['type'] as String,
-      amount: json['amount'] as int,
-      pods: json['pods'] as int,
+      amount: (json['amount'] as num).toInt(),
+      pods: (json['pods'] as num).toInt(),
       fuel1: json['fuel_1'] as String,
       fuel2: json['fuel_2'] as String,
-      isp: json['isp'] as int,
+      isp: (json['isp'] as num).toInt(),
       thrust: Thrust.fromJson(json['thrust'] as Map<String, dynamic>),
     );
 
@@ -61,7 +61,7 @@ Map<String, dynamic> _$ThrusterToJson(Thruster instance) => <String, dynamic>{
 
 Thrust _$ThrustFromJson(Map<String, dynamic> json) => Thrust(
       kN: (json['kN'] as num).toDouble(),
-      lbf: json['lbf'] as int,
+      lbf: (json['lbf'] as num).toInt(),
     );
 
 Map<String, dynamic> _$ThrustToJson(Thrust instance) => <String, dynamic>{

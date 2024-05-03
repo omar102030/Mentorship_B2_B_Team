@@ -8,8 +8,11 @@ import 'package:mentorship/features/rockets/ui/rocketsScreen.dart';
 import 'package:mentorship/features/splash_screen/splash_screen.dart';
 import 'package:mentorship/features/topics_screen/enums/topics_enum.dart';
 import 'package:mentorship/features/topics_screen/topics_screen.dart';
+import 'package:mentorship/features/web_screen/web_view_screen.dart';
 import 'package:page_transition/page_transition.dart';
 
+import '../../features/dragons/ui/dragon_details_from_id.dart';
+import '../../features/dragons/ui/dragon_details_screen.dart';
 import '../../features/home/ui/home_screen.dart';
 import '../../features/launchpad/data/models/launchpad_model.dart';
 import '../../features/launchpad/presentation/cubit/launchpad_cubit.dart';
@@ -56,8 +59,23 @@ class AppRouter {
             builder: (_) => DragonsScreen(
                   dragonList: arguments as List<DragonModel>,
                 ));
+      case Routes.dragonDetailsScreen:
+        return MaterialPageRoute(
+            builder: (_) => DragonDetailsScreen(
+                  model: arguments as DragonModel,
+                ));
+      case Routes.dragonDetailsFromIdScreen:
+        return MaterialPageRoute(
+            builder: (_) => DragonDetailsFromIdScreen(
+                  dragonId: arguments as String,
+                ));
       case Routes.rocketsScreen:
         return MaterialPageRoute(builder: (_) => const RocketsScreen());
+      case Routes.webViewScreen:
+        return MaterialPageRoute(
+            builder: (_) => WebViewScreen(
+                  url: arguments as String,
+                ));
     }
     return null;
   }

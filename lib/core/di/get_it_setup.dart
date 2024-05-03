@@ -3,8 +3,10 @@ import 'package:get_it/get_it.dart';
 import 'package:mentorship/core/networking/api_service.dart';
 import 'package:mentorship/core/networking/dio_factory.dart';
 import 'package:mentorship/features/dragons/data/repos/dargons_repo.dart';
+import 'package:mentorship/features/dragons/data/repos/dragon_details_repo.dart';
 import 'package:mentorship/features/launchpad/data/repositories/launchpad_repo.dart';
 
+import '../../features/dragons/logic/dragon_details_cubit/dragon_details_cubit.dart';
 import '../../features/dragons/logic/dragons_cubit/dragons_cubit.dart';
 
 final getIt = GetIt.instance;
@@ -20,4 +22,6 @@ void setupGetIt() {
   getIt.registerLazySingleton<DragonsRepo>(
       () => DragonsRepo(getIt<ApiService>()));
   getIt.registerFactory<DragonsCubit>(() => DragonsCubit(getIt<DragonsRepo>()));
+  getIt.registerFactory<DragonDetailsCubit>(
+      () => DragonDetailsCubit(getIt<DragonDetailsRepo>()));
 }

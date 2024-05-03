@@ -18,4 +18,6 @@ abstract class ApiService {
   Future<List<LaunchpadModel>> getLaunchpads();
   @GET(ApiConstants.getDragons)
   Future<List<DragonModel>> getDragons();
+  @GET(ApiConstants.getDragonDetails)
+  Future<DragonModel> getDragonDetails();
 }
