@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mentorship/core/helpers/extensions.dart';
+import 'package:mentorship/core/helpers/general_methods.dart';
 import 'package:mentorship/core/routing/routes.dart';
 import 'package:mentorship/core/widgets/custom_preview_headline_widget.dart';
 import 'package:mentorship/features/dragons/logic/dragons_cubit/dragons_cubit.dart';
@@ -47,6 +48,7 @@ class DragonsListPreviewWidget extends StatelessWidget {
               ],
             );
           } else if (state is DragonsError) {
+            showToast(text: state.message, color: Colors.red);
             return const SizedBox();
           }
           return const SizedBox();

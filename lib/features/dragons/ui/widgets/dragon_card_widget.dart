@@ -1,7 +1,9 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mentorship/core/helpers/extensions.dart';
 import 'package:mentorship/core/routing/routes.dart';
+import 'package:mentorship/core/widgets/shimmer_box.dart';
 import 'package:mentorship/features/dragons/data/models/dragon_model.dart';
 import 'package:mentorship/features/launchpad/presentation/widgets/bottom_positioned_shadow.dart';
 
@@ -21,24 +23,28 @@ class DragonCardWidget extends StatelessWidget {
         context.pushNamed(Routes.dragonDetailsScreen, arguments: dragonModel);
       },
       child: Stack(
+        alignment: Alignment.bottomLeft,
         children: [
-          Container(
-            width: width ?? MediaQuery.of(context).size.width / 2,
-            height: hight ?? double.infinity,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: NetworkImage(dragonModel.flickrImages[1]),
-                  fit: BoxFit.cover),
-              borderRadius: BorderRadius.circular(10.r),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(10.r),
+            child: CachedNetworkImage(
+              height: hight ?? double.infinity,
+              width: width ?? MediaQuery.of(context).size.width / 2,
+              placeholder: (context, url) => ShimmerBox(
+                  height: hight ?? double.infinity,
+                  width: width ?? MediaQuery.of(context).size.width / 2),
+              fit: BoxFit.cover,
+              imageUrl: dragonModel.flickrImages[1],
             ),
           ),
           const BottomPositionedShadow(),
-          Positioned(
-            bottom: 10.h,
-            left: 10.w,
-            child: Text(
-              dragonModel.name,
-              style: TextStyles.titleMedium,
+          FittedBox(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
+              child: Text(
+                dragonModel.name,
+                style: TextStyles.titleMedium,
+              ),
             ),
           ),
         ],

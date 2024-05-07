@@ -11,4 +11,5 @@ class Routes {
   static const String dragonDetailsScreen = '/dragonDetailsScreen';
   static const String dragonDetailsFromIdScreen = '/dragonDetailsFromIdScreen';
   static const String webViewScreen = '/webViewScreen';
+  static const String launchDetailsScreen = '/launchDetailsScreen';
 }
