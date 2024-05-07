@@ -5,6 +5,7 @@ class ApiConstants {
   static const String getLaunchpads = 'launchpads/';
   static const String getDragons = 'dragons';
   static const String getCompanyInfo = 'company';
+  static const String getLaunches = 'launches/query';
 }
 
 class ApiErrors {

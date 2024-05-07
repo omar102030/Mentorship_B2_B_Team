@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mentorship/core/helpers/extensions.dart';
+import 'package:mentorship/core/helpers/general_methods.dart';
 import 'package:mentorship/core/routing/routes.dart';
 import 'package:mentorship/core/widgets/custom_button.dart';
 import 'package:mentorship/core/theming/text_styles.dart';
@@ -19,7 +20,7 @@ class _TopicsScreenState extends State<TopicsScreen> {
     TopicsEnum.ships,
     TopicsEnum.capsules,
     TopicsEnum.starLinks,
-    TopicsEnum.launchPads,
+    TopicsEnum.landPads,
     TopicsEnum.cores,
     TopicsEnum.dragons,
     TopicsEnum.crew,
@@ -77,8 +78,15 @@ class _TopicsScreenState extends State<TopicsScreen> {
                 alignment: Alignment.bottomRight,
                 child: CustomButton(
                     onTap: () {
-                      context.pushReplacementNamed(Routes.homeScreen,
-                          arguments: choosedTopics);
+                      if (choosedTopics.length >= 3) {
+                        context.pushReplacementNamed(Routes.homeScreen,
+                            arguments: choosedTopics);
+                      } else {
+                        showSnackBar(
+                            context: context,
+                            text: 'you got to choose at least 3 topics',
+                            icon: Icons.rocket);
+                      }
                     },
                     text: 'Done')),
             50.emptyHight

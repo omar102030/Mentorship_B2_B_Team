@@ -6,6 +6,8 @@ import 'package:mentorship/features/company_info/data/repos/company_info_repo.da
 import 'package:mentorship/features/company_info/logic/cubit/company_info_cubit.dart';
 import 'package:mentorship/features/dragons/data/repos/dargons_repo.dart';
 import 'package:mentorship/features/dragons/data/repos/dragon_details_repo.dart';
+import 'package:mentorship/features/launches/data/repos/launches_repo.dart';
+import 'package:mentorship/features/launches/logic/cubit/launches_cubit.dart';
 import 'package:mentorship/features/launchpad/data/repositories/launchpad_repo.dart';
 
 import '../../features/dragons/logic/dragon_details_cubit/dragon_details_cubit.dart';
@@ -23,11 +25,24 @@ void setupGetIt() {
 
   getIt.registerLazySingleton<DragonsRepo>(
       () => DragonsRepo(getIt<ApiService>()));
+
   getIt.registerFactory<DragonsCubit>(() => DragonsCubit(getIt<DragonsRepo>()));
+
+  getIt.registerLazySingleton<LaunchesRepo>(
+      () => LaunchesRepo(getIt<ApiService>()));
+
+  getIt.registerFactory<LaunchesCubit>(
+      () => LaunchesCubit(getIt<LaunchesRepo>()));
+
+  getIt.registerLazySingleton<DragonDetailsRepo>(
+      () => DragonDetailsRepo(getIt<ApiService>()));
+
   getIt.registerFactory<DragonDetailsCubit>(
       () => DragonDetailsCubit(getIt<DragonDetailsRepo>()));
+
   getIt.registerLazySingleton<CompanyInfoRepo>(
       () => CompanyInfoRepo(getIt<ApiService>()));
+
   getIt.registerFactory<CompanyInfoCubit>(
       () => CompanyInfoCubit(getIt<CompanyInfoRepo>()));
 }

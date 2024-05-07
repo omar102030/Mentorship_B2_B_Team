@@ -56,12 +56,12 @@ class CustomTabBar extends StatelessWidget {
         CustomTabIcon(
           tabController: tabController,
           index: 3,
-          label: 'Favorite',
+          label: 'Launches',
           selectedIcon: const Icon(
-            Icons.favorite,
+            Icons.airlines_rounded,
           ),
           unselectedIcon: const Icon(
-            Icons.favorite_border,
+            Icons.airlines_outlined,
           ),
         ),
       ],

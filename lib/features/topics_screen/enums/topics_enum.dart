@@ -6,7 +6,7 @@ enum TopicsEnum {
   ships,
   capsules,
   starLinks,
-  launchPads,
+  landPads,
   cores,
   dragons,
   crew,
@@ -20,8 +20,8 @@ enum TopicsEnum {
         return 'Capsules';
       case TopicsEnum.starLinks:
         return 'Star Links';
-      case TopicsEnum.launchPads:
-        return 'Launch Pads';
+      case TopicsEnum.landPads:
+        return 'Land Pads';
       case TopicsEnum.cores:
         return 'Cores';
       case TopicsEnum.dragons:
@@ -41,7 +41,7 @@ enum TopicsEnum {
         return const SizedBox();
       case TopicsEnum.starLinks:
         return const SizedBox();
-      case TopicsEnum.launchPads:
+      case TopicsEnum.landPads:
         return const SizedBox();
       case TopicsEnum.cores:
         return const SizedBox();
