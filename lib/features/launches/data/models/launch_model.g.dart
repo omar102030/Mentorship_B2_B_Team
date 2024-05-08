@@ -22,11 +22,14 @@ LaunchModel _$LaunchModelFromJson(Map<String, dynamic> json) => LaunchModel(
           .toList(),
       details: json['details'] as String?,
       crew: (json['crew'] as List<dynamic>).map((e) => e as String).toList(),
-      ships: (json['ships'] as List<dynamic>).map((e) => e as String).toList(),
+      ships: (json['ships'] as List<dynamic>)
+          .map((e) => RelatedTopicModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
       capsules:
           (json['capsules'] as List<dynamic>).map((e) => e as String).toList(),
-      payloads:
-          (json['payloads'] as List<dynamic>).map((e) => e as String).toList(),
+      payloads: (json['payloads'] as List<dynamic>)
+          .map((e) => RelatedTopicModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
       launchpad: json['launchpad'] as String,
       flightNumber: (json['flight_number'] as num?)?.toInt(),
       name: json['name'] as String,
@@ -36,7 +39,7 @@ LaunchModel _$LaunchModelFromJson(Map<String, dynamic> json) => LaunchModel(
       datePrecision: json['date_precision'] as String,
       upcoming: json['upcoming'] as bool?,
       cores: (json['cores'] as List<dynamic>)
-          .map((e) => Core.fromJson(e as Map<String, dynamic>))
+          .map((e) => LaunchCore.fromJson(e as Map<String, dynamic>))
           .toList(),
       autoUpdate: json['auto_update'] as bool?,
       tbd: json['tbd'] as bool?,
@@ -158,7 +161,7 @@ Map<String, dynamic> _$FailureToJson(Failure instance) => <String, dynamic>{
       'reason': instance.reason,
     };
 
-Core _$CoreFromJson(Map<String, dynamic> json) => Core(
+LaunchCore _$LaunchCoreFromJson(Map<String, dynamic> json) => LaunchCore(
       core: json['core'] as String?,
       flight: (json['flight'] as num?)?.toInt(),
       gridfins: json['gridfins'] as bool?,
@@ -170,7 +173,8 @@ Core _$CoreFromJson(Map<String, dynamic> json) => Core(
       landpad: json['landpad'] as String?,
     );
 
-Map<String, dynamic> _$CoreToJson(Core instance) => <String, dynamic>{
+Map<String, dynamic> _$LaunchCoreToJson(LaunchCore instance) =>
+    <String, dynamic>{
       'core': instance.core,
       'flight': instance.flight,
       'gridfins': instance.gridfins,
@@ -180,4 +184,16 @@ Map<String, dynamic> _$CoreToJson(Core instance) => <String, dynamic>{
       'landing_success': instance.landingSuccess,
       'landing_type': instance.landingType,
       'landpad': instance.landpad,
+    };
+
+RelatedTopicModel _$RelatedTopicModelFromJson(Map<String, dynamic> json) =>
+    RelatedTopicModel(
+      name: json['name'] as String,
+      id: json['id'] as String,
+    );
+
+Map<String, dynamic> _$RelatedTopicModelToJson(RelatedTopicModel instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'id': instance.id,
     };

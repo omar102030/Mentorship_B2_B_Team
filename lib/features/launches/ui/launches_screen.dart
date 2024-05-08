@@ -22,6 +22,7 @@ class _LaunchesScreenState extends State<LaunchesScreen>
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return BlocProvider(
       create: (context) =>
           getIt<LaunchesCubit>()..emitGetLaunchesState(isPaginating: false),

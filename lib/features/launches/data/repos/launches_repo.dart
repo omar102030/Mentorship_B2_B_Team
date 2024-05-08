@@ -1,4 +1,3 @@
-import 'package:dio/dio.dart';
 import 'package:mentorship/core/networking/api_error_handler.dart';
 import 'package:mentorship/core/networking/api_service.dart';
 import 'package:mentorship/features/launches/data/models/launches_query_model.dart';
@@ -16,6 +15,16 @@ class LaunchesRepo {
         'options': {
           'page': pageNum,
           'limit': 10,
+          "populate": [
+            {
+              "path": "ships",
+              "select": {"name": 1}
+            },
+            {
+              "path": "payloads",
+              "select": {"name": 1}
+            },
+          ]
         }
       });
       return ApiResult.success(response);

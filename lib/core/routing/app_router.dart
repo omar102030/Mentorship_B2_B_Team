@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mentorship/core/di/get_it_setup.dart';
 import 'package:mentorship/core/routing/routes.dart';
+import 'package:mentorship/features/cores/data/models/core_model.dart';
+import 'package:mentorship/features/cores/ui/cores_screen.dart';
 import 'package:mentorship/features/dragons/data/models/dragon_model.dart';
 import 'package:mentorship/features/dragons/ui/dragons_screen.dart';
 import 'package:mentorship/features/launches/data/models/launch_model.dart';
@@ -13,6 +15,7 @@ import 'package:mentorship/features/topics_screen/topics_screen.dart';
 import 'package:mentorship/features/web_screen/web_view_screen.dart';
 import 'package:page_transition/page_transition.dart';
 
+import '../../features/cores/ui/core_details_screen.dart';
 import '../../features/dragons/ui/dragon_details_from_id.dart';
 import '../../features/dragons/ui/dragon_details_screen.dart';
 import '../../features/home/ui/home_screen.dart';
@@ -67,6 +70,8 @@ class AppRouter {
             builder: (_) => DragonsScreen(
                   dragonList: arguments as List<DragonModel>,
                 ));
+      case Routes.coresScreen:
+        return MaterialPageRoute(builder: (_) => const CoresScreen());
       case Routes.dragonDetailsScreen:
         return MaterialPageRoute(
             builder: (_) => DragonDetailsScreen(
@@ -83,6 +88,11 @@ class AppRouter {
         return MaterialPageRoute(
             builder: (_) => WebViewScreen(
                   url: arguments as String,
+                ));
+      case Routes.coreDetailsScreen:
+        return MaterialPageRoute(
+            builder: (_) => CoreDetailsScreen(
+                  core: arguments as Core,
                 ));
     }
     return null;

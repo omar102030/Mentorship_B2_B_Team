@@ -12,4 +12,6 @@ class Routes {
   static const String dragonDetailsFromIdScreen = '/dragonDetailsFromIdScreen';
   static const String webViewScreen = '/webViewScreen';
   static const String launchDetailsScreen = '/launchDetailsScreen';
+  static const String coresScreen = '/coresScreen';
+  static const String coreDetailsScreen = '/coreDetailsScreen';
 }
