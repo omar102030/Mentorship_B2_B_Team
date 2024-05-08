@@ -17,9 +17,9 @@ class LaunchModel {
   final List<Failure> failures;
   final String? details;
   final List<String> crew;
-  final List<String> ships;
+  final List<RelatedTopicModel> ships;
   final List<String> capsules;
-  final List<String> payloads;
+  final List<RelatedTopicModel> payloads;
   final String launchpad;
   @JsonKey(name: 'flight_number')
   final int? flightNumber;
@@ -33,7 +33,7 @@ class LaunchModel {
   @JsonKey(name: 'date_precision')
   final String datePrecision;
   final bool? upcoming;
-  final List<Core> cores;
+  final List<LaunchCore> cores;
   @JsonKey(name: 'auto_update')
   final bool? autoUpdate;
   final bool? tbd;
@@ -197,10 +197,8 @@ class Failure {
   Map<String, dynamic> toJson() => _$FailureToJson(this);
 }
 
-//! if we added the core feature to the app this model should be moved to the model folder of core feature
-
 @JsonSerializable()
-class Core {
+class LaunchCore {
   final String? core;
   final int? flight;
   final bool? gridfins;
@@ -214,7 +212,7 @@ class Core {
   final String? landingType;
   final String? landpad;
 
-  Core({
+  LaunchCore({
     required this.core,
     required this.flight,
     required this.gridfins,
@@ -226,6 +224,21 @@ class Core {
     required this.landpad,
   });
 
-  factory Core.fromJson(Map<String, dynamic> json) => _$CoreFromJson(json);
-  Map<String, dynamic> toJson() => _$CoreToJson(this);
+  factory LaunchCore.fromJson(Map<String, dynamic> json) =>
+      _$LaunchCoreFromJson(json);
+  Map<String, dynamic> toJson() => _$LaunchCoreToJson(this);
+}
+
+@JsonSerializable()
+class RelatedTopicModel {
+  final String name;
+  final String id;
+  RelatedTopicModel({
+    required this.name,
+    required this.id,
+  });
+
+  factory RelatedTopicModel.fromJson(Map<String, dynamic> json) =>
+      _$RelatedTopicModelFromJson(json);
+  Map<String, dynamic> toJson() => _$RelatedTopicModelToJson(this);
 }

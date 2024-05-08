@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:mentorship/core/networking/api_constants.dart';
 import 'package:mentorship/features/company_info/data/models/company_info_model.dart';
+import 'package:mentorship/features/cores/data/models/core_query_model.dart';
 import 'package:mentorship/features/dragons/data/models/dragon_model.dart';
-import 'package:mentorship/features/launches/data/models/launch_model.dart';
 import 'package:mentorship/features/launches/data/models/launches_query_model.dart';
 import 'package:mentorship/features/rockets/data/models/rockets_model.dart';
 import 'package:retrofit/http.dart';
@@ -28,6 +28,10 @@ abstract class ApiService {
   Future<CompanyInfoModel> getCompanyInfo();
   @POST(ApiConstants.getLaunches)
   Future<LaunchesPaginatedModel> getLaunches(
+    @Body() Map<String, dynamic> query,
+  );
+  @POST(ApiConstants.getCores)
+  Future<CoresQueryModel> getCores(
     @Body() Map<String, dynamic> query,
   );
 }

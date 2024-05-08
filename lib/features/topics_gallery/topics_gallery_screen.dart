@@ -16,29 +16,35 @@ class TopicsGalleryScreen extends StatefulWidget {
 
 class _TopicsGalleryScreenState extends State<TopicsGalleryScreen>
     with AutomaticKeepAliveClientMixin {
-      
   @override
   bool get wantKeepAlive => true;
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Company Info :-',
-              style: TextStyles.titleMedium,
-            ),
-            10.emptyHight,
-            const CompanyInfoCard(),
-            20.emptyHight,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Company Info :-',
+                style: TextStyles.titleMedium,
+              ),
+              10.emptyHight,
+              const CompanyInfoCard(),
+              10.emptyHight,
 
-            //?___________________________________
-            ...widget.topics.map((e) => e.getTopicDesignWidget)
-          ],
+              //?___________________________________
+              ...widget.topics.map((e) => Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5.h),
+                    child: e.getTopicDesignWidget,
+                  )),
+              70.verticalSpace
+            ],
+          ),
         ),
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mentorship/features/cores/ui/widgets/cores_list_preview.dart';
 
 import '../../dragons/ui/widgets/dragon_list_preview.dart';
 
@@ -44,7 +45,7 @@ enum TopicsEnum {
       case TopicsEnum.landPads:
         return const SizedBox();
       case TopicsEnum.cores:
-        return const SizedBox();
+        return const CoresListPreviewWidget();
       case TopicsEnum.dragons:
         return const DragonsListPreviewWidget();
       case TopicsEnum.crew:
