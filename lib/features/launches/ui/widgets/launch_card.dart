@@ -19,7 +19,9 @@ class LaunchCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        context.pushNamed(Routes.launchDetailsScreen, arguments: launchModel);
+        // context.pushNamed(Routes.launchDetailsScreen, arguments: launchModel);
+        context.pushNamed(Routes.launchDetailsFromId,
+            arguments: '62dd70d5202306255024d139');
       },
       child: Stack(
         alignment: Alignment.bottomLeft,

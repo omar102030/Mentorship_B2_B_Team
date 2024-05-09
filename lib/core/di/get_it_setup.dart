@@ -9,11 +9,12 @@ import 'package:mentorship/features/cores/logic/cubit/cores_cubit.dart';
 import 'package:mentorship/features/dragons/data/repos/dargons_repo.dart';
 import 'package:mentorship/features/dragons/data/repos/dragon_details_repo.dart';
 import 'package:mentorship/features/launches/data/repos/launches_repo.dart';
-import 'package:mentorship/features/launches/logic/cubit/launches_cubit.dart';
+import 'package:mentorship/features/launches/logic/launches_cubit/launches_cubit.dart';
 import 'package:mentorship/features/launchpad/data/repositories/launchpad_repo.dart';
 
 import '../../features/dragons/logic/dragon_details_cubit/dragon_details_cubit.dart';
 import '../../features/dragons/logic/dragons_cubit/dragons_cubit.dart';
+import '../../features/launches/logic/launch_details_cubit/launch_details_cubit.dart';
 
 final getIt = GetIt.instance;
 
@@ -45,6 +46,9 @@ void setupGetIt() {
 
   getIt.registerFactory<DragonDetailsCubit>(
       () => DragonDetailsCubit(getIt<DragonDetailsRepo>()));
+
+  getIt.registerFactory<LaunchDetailsCubit>(
+      () => LaunchDetailsCubit(getIt<LaunchesRepo>()));
 
   getIt.registerLazySingleton<CompanyInfoRepo>(
       () => CompanyInfoRepo(getIt<ApiService>()));

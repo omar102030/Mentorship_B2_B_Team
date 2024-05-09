@@ -21,7 +21,9 @@ LaunchModel _$LaunchModelFromJson(Map<String, dynamic> json) => LaunchModel(
           .map((e) => Failure.fromJson(e as Map<String, dynamic>))
           .toList(),
       details: json['details'] as String?,
-      crew: (json['crew'] as List<dynamic>).map((e) => e as String).toList(),
+      crew: (json['crew'] as List<dynamic>)
+          .map((e) => LaunchCrewModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
       ships: (json['ships'] as List<dynamic>)
           .map((e) => RelatedTopicModel.fromJson(e as Map<String, dynamic>))
           .toList(),

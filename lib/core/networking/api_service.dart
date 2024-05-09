@@ -8,6 +8,7 @@ import 'package:mentorship/features/rockets/data/models/rockets_model.dart';
 import 'package:retrofit/http.dart';
 import 'package:retrofit/retrofit.dart';
 
+import '../../features/launches/data/models/launch_model.dart';
 import '../../features/launchpad/data/models/launchpad_model.dart';
 
 part 'api_service.g.dart';
@@ -34,4 +35,6 @@ abstract class ApiService {
   Future<CoresQueryModel> getCores(
     @Body() Map<String, dynamic> query,
   );
+  @GET('${ApiConstants.getLauncheDetails}/{id}')
+  Future<LaunchModel> getLaunchDetails(@Path("id") String id);
 }

@@ -8,6 +8,7 @@ import 'package:mentorship/core/widgets/default_appbar.dart';
 import 'package:mentorship/core/widgets/shimmer_box.dart';
 import 'package:mentorship/features/dragons/data/models/dragon_model.dart';
 import 'package:mentorship/features/dragons/ui/widgets/dragon_details_table.dart';
+import 'package:mentorship/features/dragons/ui/widgets/dragon_prototype_preview.dart';
 import 'package:mentorship/features/dragons/ui/widgets/thruster_card_widget.dart';
 import 'package:mentorship/features/launchpad/presentation/widgets/bottom_positioned_shadow.dart';
 
@@ -34,6 +35,7 @@ class DragonDetailsScreen extends StatelessWidget {
                     child: CachedNetworkImage(
                         imageUrl: model.flickrImages[1],
                         width: double.infinity,
+                        height: 250.h,
                         fit: BoxFit.cover,
                         placeholder: (context, url) =>
                             ShimmerBox(height: 200.h, width: double.infinity)),
@@ -49,6 +51,8 @@ class DragonDetailsScreen extends StatelessWidget {
                   ),
                 ],
               ),
+              16.emptyHight,
+              DragonPrototypePreview(dragonModel: model),
               16.emptyHight,
               Text(
                 model.description,

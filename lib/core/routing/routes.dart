@@ -14,4 +14,5 @@ class Routes {
   static const String launchDetailsScreen = '/launchDetailsScreen';
   static const String coresScreen = '/coresScreen';
   static const String coreDetailsScreen = '/coreDetailsScreen';
+  static const String launchDetailsFromId = '/launchDetailsFromId';
 }
