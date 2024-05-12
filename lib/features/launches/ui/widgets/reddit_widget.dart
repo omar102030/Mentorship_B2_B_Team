@@ -4,12 +4,15 @@ import 'package:mentorship/core/helpers/extensions.dart';
 import 'package:mentorship/core/routing/routes.dart';
 import 'package:mentorship/core/theming/text_styles.dart';
 import 'package:mentorship/core/widgets/custom_button.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 import '../../data/models/launch_model.dart';
 
 class RedditWidget extends StatelessWidget {
   final Reddit reddit;
-  const RedditWidget({super.key, required this.reddit});
+  final YoutubePlayerController? youtubeController;
+  const RedditWidget(
+      {super.key, required this.reddit, required this.youtubeController});
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +40,7 @@ class RedditWidget extends StatelessWidget {
                               onTap: () {
                                 context.pushNamed(Routes.webViewScreen,
                                     arguments: reddit.campaign);
+                                youtubeController?.pause();
                               },
                               text: 'Campaign'),
                         )
@@ -48,6 +52,7 @@ class RedditWidget extends StatelessWidget {
                               onTap: () {
                                 context.pushNamed(Routes.webViewScreen,
                                     arguments: reddit.launch);
+                                youtubeController?.pause();
                               },
                               text: 'Launch'),
                         )
@@ -59,6 +64,7 @@ class RedditWidget extends StatelessWidget {
                               onTap: () {
                                 context.pushNamed(Routes.webViewScreen,
                                     arguments: reddit.media);
+                                youtubeController?.pause();
                               },
                               text: 'Media'),
                         )
@@ -70,6 +76,7 @@ class RedditWidget extends StatelessWidget {
                               onTap: () {
                                 context.pushNamed(Routes.webViewScreen,
                                     arguments: reddit.recovery);
+                                youtubeController?.pause();
                               },
                               text: 'Recovery'),
                         )

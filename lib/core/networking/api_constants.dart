@@ -6,6 +6,7 @@ class ApiConstants {
   static const String getDragons = 'dragons';
   static const String getCompanyInfo = 'company';
   static const String getLaunches = 'launches/query';
+  static const String getLauncheDetails = 'launches';
   static const String getCores = 'cores/query';
 }
 

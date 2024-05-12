@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:mentorship/features/launches/data/models/launch_crew_model.dart';
 
 part 'launch_model.g.dart';
 
@@ -16,7 +17,7 @@ class LaunchModel {
   final bool? success;
   final List<Failure> failures;
   final String? details;
-  final List<String> crew;
+  final List<LaunchCrewModel> crew;
   final List<RelatedTopicModel> ships;
   final List<String> capsules;
   final List<RelatedTopicModel> payloads;

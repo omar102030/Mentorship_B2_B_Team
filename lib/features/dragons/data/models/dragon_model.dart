@@ -15,6 +15,13 @@ class DragonModel {
   final String wikipediaLink;
   @JsonKey(name: 'orbit_duration_yr')
   final int orbitDurationInYears;
+  @JsonKey(name: 'sidewall_angle_deg')
+  final int sideWallAngleDegree;
+  @JsonKey(name: 'dry_mass_kg')
+  final int dryMassKg;
+  final Dimention diameter;
+  @JsonKey(name: 'height_w_trunk')
+  final Dimention hight;
   final List<Thruster> thrusters;
   @JsonKey(name: 'first_flight')
   final String firstFlightDate;
@@ -29,6 +36,10 @@ class DragonModel {
     required this.description,
     required this.wikipediaLink,
     required this.orbitDurationInYears,
+    required this.sideWallAngleDegree,
+    required this.dryMassKg,
+    required this.diameter,
+    required this.hight,
     required this.thrusters,
     required this.firstFlightDate,
     required this.flickrImages,
@@ -38,6 +49,21 @@ class DragonModel {
       _$DragonModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$DragonModelToJson(this);
+}
+
+@JsonSerializable()
+class Dimention {
+  final int meters;
+  final int feet;
+  Dimention({
+    required this.meters,
+    required this.feet,
+  });
+
+  factory Dimention.fromJson(Map<String, dynamic> json) =>
+      _$DimentionFromJson(json);
+
+  Map<String, dynamic> toJson() => _$DimentionToJson(this);
 }
 
 @JsonSerializable()

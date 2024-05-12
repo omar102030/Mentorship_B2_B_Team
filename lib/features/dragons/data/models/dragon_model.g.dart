@@ -15,6 +15,10 @@ DragonModel _$DragonModelFromJson(Map<String, dynamic> json) => DragonModel(
       description: json['description'] as String,
       wikipediaLink: json['wikipedia'] as String,
       orbitDurationInYears: (json['orbit_duration_yr'] as num).toInt(),
+      sideWallAngleDegree: (json['sidewall_angle_deg'] as num).toInt(),
+      dryMassKg: (json['dry_mass_kg'] as num).toInt(),
+      diameter: Dimention.fromJson(json['diameter'] as Map<String, dynamic>),
+      hight: Dimention.fromJson(json['height_w_trunk'] as Map<String, dynamic>),
       thrusters: (json['thrusters'] as List<dynamic>)
           .map((e) => Thruster.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -34,9 +38,23 @@ Map<String, dynamic> _$DragonModelToJson(DragonModel instance) =>
       'description': instance.description,
       'wikipedia': instance.wikipediaLink,
       'orbit_duration_yr': instance.orbitDurationInYears,
+      'sidewall_angle_deg': instance.sideWallAngleDegree,
+      'dry_mass_kg': instance.dryMassKg,
+      'diameter': instance.diameter,
+      'height_w_trunk': instance.hight,
       'thrusters': instance.thrusters,
       'first_flight': instance.firstFlightDate,
       'flickr_images': instance.flickrImages,
+    };
+
+Dimention _$DimentionFromJson(Map<String, dynamic> json) => Dimention(
+      meters: (json['meters'] as num).toInt(),
+      feet: (json['feet'] as num).toInt(),
+    );
+
+Map<String, dynamic> _$DimentionToJson(Dimention instance) => <String, dynamic>{
+      'meters': instance.meters,
+      'feet': instance.feet,
     };
 
 Thruster _$ThrusterFromJson(Map<String, dynamic> json) => Thruster(

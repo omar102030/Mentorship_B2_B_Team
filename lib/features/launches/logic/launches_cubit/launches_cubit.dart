@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:mentorship/features/launches/data/models/launches_query_model.dart';
 import 'package:mentorship/features/launches/data/repos/launches_repo.dart';
-import 'package:mentorship/features/launches/logic/cubit/launches_state.dart';
+import 'package:mentorship/features/launches/logic/launches_cubit/launches_state.dart';
 import 'package:pull_to_refresh_new/pull_to_refresh.dart';
 
 import '../../data/models/launch_model.dart';
