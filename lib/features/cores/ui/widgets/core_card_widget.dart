@@ -14,33 +14,39 @@ class CoreCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(10.r),
-      ),
-      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
-      width: MediaQuery.of(context).size.width / 1.5,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          CustomRowInfo(infoName: 'Serial', infoValue: core.serial),
-          CustomRowInfo(infoName: 'Status', infoValue: core.status),
-          CustomRowInfo(
-              infoName: 'Block',
-              infoValue: core.block != null ? core.block.toString() : 'N/A'),
-          CustomRowInfo(
-              infoName: 'Landings', infoValue: core.asdsLandings.toString()),
-          CustomButton(
-            onTap: () {
-              context.pushNamed(Routes.coreDetailsScreen, arguments: core);
-            },
-            text: 'View Details',
-            buttonColor: Colors.black,
-            textStyle: TextStyles.bodySmall,
+    return Card(
+      shadowColor: Colors.blue[300],
+      elevation: 3,
+      color: Colors.black,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.r)),
+      child: SizedBox(
+        width: MediaQuery.of(context).size.width / 1.5,
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              CustomRowInfo(infoName: 'Serial', infoValue: core.serial),
+              CustomRowInfo(infoName: 'Status', infoValue: core.status),
+              CustomRowInfo(
+                  infoName: 'Block',
+                  infoValue:
+                      core.block != null ? core.block.toString() : 'N/A'),
+              CustomRowInfo(
+                  infoName: 'Landings',
+                  infoValue: core.asdsLandings.toString()),
+              CustomButton(
+                onTap: () {
+                  context.pushNamed(Routes.coreDetailsScreen, arguments: core);
+                },
+                text: 'View Details',
+                buttonColor: Colors.white,
+                textStyle: TextStyles.bodySmall.copyWith(color: Colors.black),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }

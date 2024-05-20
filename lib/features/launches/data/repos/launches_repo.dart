@@ -34,6 +34,7 @@ class LaunchesRepo {
       });
       return ApiResult.success(response);
     } catch (e) {
+      print('error is ${e.toString()}');
       return ApiResult.failure(ErrorHandler.handle(e));
     }
   }
@@ -43,6 +44,7 @@ class LaunchesRepo {
       final response = await _apiService.getLaunchDetails(launchId);
       return ApiResult.success(response);
     } catch (error) {
+      print('error is ${error.toString()}');
       return ApiResult.failure(ErrorHandler.handle(error));
     }
   }

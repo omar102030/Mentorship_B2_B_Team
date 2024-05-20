@@ -15,11 +15,11 @@ class CustomRowInfo extends StatelessWidget {
       children: [
         Text(
           infoName,
-          style: TextStyles.titleSmall.copyWith(color: Colors.black),
+          style: TextStyles.titleSmall.copyWith(color: Colors.white),
         ),
         Text(
           infoValue,
-          style: TextStyles.bodyMedium.copyWith(color: Colors.black),
+          style: TextStyles.bodyMedium,
         ),
       ],
     );

@@ -53,7 +53,7 @@ class DragonDetailsScreen extends StatelessWidget {
               ),
               16.emptyHight,
               DragonPrototypePreview(dragonModel: model),
-              16.emptyHight,
+              8.emptyHight,
               Text(
                 model.description,
                 style: TextStyles.bodyMedium,

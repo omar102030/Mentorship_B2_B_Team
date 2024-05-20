@@ -1,4 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:mentorship/features/launches/data/models/converters/launch_crew_converter.dart';
+import 'package:mentorship/core/helpers/related_topic_converter.dart';
 import 'package:mentorship/features/launches/data/models/launch_crew_model.dart';
 
 part 'launch_model.g.dart';
@@ -17,10 +19,14 @@ class LaunchModel {
   final bool? success;
   final List<Failure> failures;
   final String? details;
-  final List<LaunchCrewModel> crew;
-  final List<RelatedTopicModel> ships;
-  final List<String> capsules;
-  final List<RelatedTopicModel> payloads;
+  @LaunchCrewConverter()
+  final dynamic crew;
+  @RelatedTopicConverter()
+  final dynamic ships;
+  @RelatedTopicConverter()
+  final dynamic capsules;
+  @RelatedTopicConverter()
+  final dynamic payloads;
   final String launchpad;
   @JsonKey(name: 'flight_number')
   final int? flightNumber;
