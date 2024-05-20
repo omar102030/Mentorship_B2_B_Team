@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mentorship/core/helpers/extensions.dart';
 import 'package:mentorship/features/company_info/ui/widgets/company_info_card.dart';
 
-import '../../core/theming/text_styles.dart';
 import '../topics_screen/enums/topics_enum.dart';
 
 class TopicsGalleryScreen extends StatefulWidget {
@@ -29,15 +28,8 @@ class _TopicsGalleryScreenState extends State<TopicsGalleryScreen>
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'Company Info :-',
-                style: TextStyles.titleMedium,
-              ),
-              10.emptyHight,
               const CompanyInfoCard(),
               10.emptyHight,
-
-              //?___________________________________
               ...widget.topics.map((e) => Padding(
                     padding: EdgeInsets.symmetric(vertical: 5.h),
                     child: e.getTopicDesignWidget,

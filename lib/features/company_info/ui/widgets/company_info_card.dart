@@ -25,72 +25,82 @@ class CompanyInfoCard extends StatelessWidget {
         builder: (context, state) {
           if (state is CompanyInfoLoaded) {
             final companyInfo = state.data;
-            return Stack(children: [
-              Container(
-                decoration:
-                    BoxDecoration(borderRadius: BorderRadius.circular(10.r)),
-                child: ClipPath(
-                  clipper: CustomClipPath(),
-                  child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5.r),
-                        color: Colors.white,
-                      ),
-                      height: 200.h,
-                      width: double.infinity,
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.h),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Image.asset(
-                            'assets/images/spacex-logo.png',
-                            height: 25.h,
-                          ),
-                          const Spacer(),
-                          CustomInfoTextWidget(
-                              firstText: 'Founder/Ceo :  ',
-                              seconedText: companyInfo.ceo),
-                          5.emptyHight,
-                          CustomInfoTextWidget(
-                              firstText: 'Coo :  ',
-                              seconedText: companyInfo.coo),
-                          5.emptyHight,
-                          CustomInfoTextWidget(
-                              firstText: 'Cto Propulsion :  ',
-                              seconedText: companyInfo.ctoPropulsion),
-                          5.emptyHight,
-                          CustomInfoTextWidget(
-                              firstText: 'Valuation :  ',
-                              seconedText: '${companyInfo.valuation} \$'),
-                          const Spacer(),
-                          CustomButton(
-                            onTap: () {},
-                            text: 'View Details',
-                            buttonColor: Colors.black,
-                            textStyle: TextStyles.bodyMedium,
-                          )
-                        ],
-                      )),
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Company Info :-',
+                  style: TextStyles.titleMedium,
                 ),
-              ),
-              Positioned(
-                  top: 30.h,
-                  bottom: 30.h,
-                  right: 5.w,
-                  child: Container(
-                    height: 100.h,
-                    width: 100.w,
+                10.emptyHight,
+                Stack(children: [
+                  Container(
                     decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                            color: ColorsManager.scaffoldColor, width: 3),
-                        image: const DecorationImage(
-                            fit: BoxFit.fitWidth,
-                            image: CachedNetworkImageProvider(
-                                'https://i.redd.it/diq7uy1paooc1.png'))),
-                  )),
-            ]);
+                        borderRadius: BorderRadius.circular(10.r)),
+                    child: ClipPath(
+                      clipper: CustomClipPath(),
+                      child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5.r),
+                            color: Colors.white,
+                          ),
+                          height: 200.h,
+                          width: double.infinity,
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 5.w, vertical: 5.h),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Image.asset(
+                                'assets/images/spacex-logo.png',
+                                height: 25.h,
+                              ),
+                              const Spacer(),
+                              CustomInfoTextWidget(
+                                  firstText: 'Founder/Ceo :  ',
+                                  seconedText: companyInfo.ceo),
+                              5.emptyHight,
+                              CustomInfoTextWidget(
+                                  firstText: 'Coo :  ',
+                                  seconedText: companyInfo.coo),
+                              5.emptyHight,
+                              CustomInfoTextWidget(
+                                  firstText: 'Cto Propulsion :  ',
+                                  seconedText: companyInfo.ctoPropulsion),
+                              5.emptyHight,
+                              CustomInfoTextWidget(
+                                  firstText: 'Valuation :  ',
+                                  seconedText: '${companyInfo.valuation} \$'),
+                              const Spacer(),
+                              CustomButton(
+                                onTap: () {},
+                                text: 'View Details',
+                                buttonColor: Colors.black,
+                                textStyle: TextStyles.bodyMedium,
+                              )
+                            ],
+                          )),
+                    ),
+                  ),
+                  Positioned(
+                      top: 30.h,
+                      bottom: 30.h,
+                      right: 5.w,
+                      child: Container(
+                        height: 100.h,
+                        width: 100.w,
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                                color: ColorsManager.scaffoldColor, width: 3),
+                            image: const DecorationImage(
+                                fit: BoxFit.fitWidth,
+                                image: CachedNetworkImageProvider(
+                                    'https://i.redd.it/diq7uy1paooc1.png'))),
+                      )),
+                ]),
+              ],
+            );
           } else {
             return ShimmerBox(
               height: 200.h,

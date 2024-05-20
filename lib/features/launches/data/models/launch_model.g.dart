@@ -21,17 +21,10 @@ LaunchModel _$LaunchModelFromJson(Map<String, dynamic> json) => LaunchModel(
           .map((e) => Failure.fromJson(e as Map<String, dynamic>))
           .toList(),
       details: json['details'] as String?,
-      crew: (json['crew'] as List<dynamic>)
-          .map((e) => LaunchCrewModel.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      ships: (json['ships'] as List<dynamic>)
-          .map((e) => RelatedTopicModel.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      capsules:
-          (json['capsules'] as List<dynamic>).map((e) => e as String).toList(),
-      payloads: (json['payloads'] as List<dynamic>)
-          .map((e) => RelatedTopicModel.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      crew: const LaunchCrewConverter().fromJson(json['crew']),
+      ships: const RelatedTopicConverter().fromJson(json['ships']),
+      capsules: const RelatedTopicConverter().fromJson(json['capsules']),
+      payloads: const RelatedTopicConverter().fromJson(json['payloads']),
       launchpad: json['launchpad'] as String,
       flightNumber: (json['flight_number'] as num?)?.toInt(),
       name: json['name'] as String,
@@ -61,10 +54,10 @@ Map<String, dynamic> _$LaunchModelToJson(LaunchModel instance) =>
       'success': instance.success,
       'failures': instance.failures,
       'details': instance.details,
-      'crew': instance.crew,
-      'ships': instance.ships,
-      'capsules': instance.capsules,
-      'payloads': instance.payloads,
+      'crew': const LaunchCrewConverter().toJson(instance.crew),
+      'ships': const RelatedTopicConverter().toJson(instance.ships),
+      'capsules': const RelatedTopicConverter().toJson(instance.capsules),
+      'payloads': const RelatedTopicConverter().toJson(instance.payloads),
       'launchpad': instance.launchpad,
       'flight_number': instance.flightNumber,
       'name': instance.name,
